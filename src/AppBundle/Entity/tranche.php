@@ -31,17 +31,16 @@ class tranche
     /**
      * @var int
      *
-     * @ORM\Column(name="nbre_de_pizza", type="integer")
+     * @ORM\Column(name="nbre_de_pizza", type="integer", nullable=true)
      */
     private $nbreDePizza;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="nbre_de_snack", type="integer")
+     * @ORM\Column(name="nbre_de_snack", type="integer", nullable=true)
      */
     private $nbreDeSnack;
-
 
     /**
      * Get id

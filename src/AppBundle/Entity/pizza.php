@@ -31,14 +31,14 @@ class pizza
     /**
      * @var int
      *
-     * @ORM\Column(name="price", type="integer")
+     * @ORM\Column(name="price", type="decimal", precision=4, scale=2)
      */
     private $price;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="img", type="string", length=20)
+     * @ORM\Column(name="img", type="string", length=20, nullable=true)
      */
     private $img;
 

@@ -24,16 +24,23 @@ class snack
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=20)
+     * @ORM\Column(name="name", type="string", length=25)
      */
     private $name;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="price", type="integer")
+     * @ORM\Column(name="price", type="decimal", precision=4, scale=2)
      */
     private $price;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="img", type="string", length=20, nullable=true)
+     */
+    private $img;
 
 
     /**
@@ -93,5 +100,22 @@ class snack
     {
         return $this->price;
     }
+
+    /**
+     * @return string
+     */
+    public function getImg()
+    {
+        return $this->img;
+    }
+
+    /**
+     * @param string $img
+     */
+    public function setImg($img)
+    {
+        $this->img = $img;
+    }
+
 }
 
