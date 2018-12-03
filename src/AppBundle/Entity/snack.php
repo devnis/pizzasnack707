@@ -42,6 +42,12 @@ class snack
      */
     private $img;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ingredients", type="string", length=45)
+     */
+    private $ingredients;
 
     /**
      * Get id
@@ -115,6 +121,22 @@ class snack
     public function setImg($img)
     {
         $this->img = $img;
+    }
+
+    /**
+     * @return string
+     */
+    public function getIngredients()
+    {
+        return $this->ingredients;
+    }
+
+    /**
+     * @param string $ingredients
+     */
+    public function setIngredients($ingredients)
+    {
+        $this->ingredients = $ingredients;
     }
 
 }
