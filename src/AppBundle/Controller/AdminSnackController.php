@@ -9,39 +9,39 @@
 namespace AppBundle\Controller;
 
 
-use AppBundle\Entity\Pizza;
-use AppBundle\Form\Type\PizzaType;
+use AppBundle\Entity\Snack;
+use AppBundle\Form\Type\SnackType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class AdminPizzaController extends Controller
+class AdminSnackController extends Controller
 {
     /**
-     * @Route("/admin/pizza", name="admin_pizza")
+     * @Route("/admin/snack", name="admin_snack")
      */
-    public function PizzaAction()
+    public function SnackAction()
     {
-        $repository = $this->getDoctrine()->getRepository(Pizza::class);
-        $pizzas = $repository->findAll();
+        $repository = $this->getDoctrine()->getRepository(Snack::class);
+        $snacks = $repository->findAll();
 
-        return $this->render('@App/adminPizza/read.html.twig',
+        return $this->render('@App/adminSnack/read.html.twig',
             [
-                'pizzas' => $pizzas
+                'snacks' => $snacks
             ]
         );
     }
 
     /**
-     * @Route("/admin/pizza/update/{id}", name="admin_pizza_update")
+     * @Route("/admin/snack/update/{id}", name="admin_snack_update")
      */
     public function UpdateAction(Request $request, $id)
     {
-        $repository = $this->getDoctrine()->getRepository(Pizza::class);
+        $repository = $this->getDoctrine()->getRepository(Snack::class);
         $pizza = $repository->find($id);
 
-        $form = $this->createForm(PizzaType::class, $pizza);
+        $form = $this->createForm(SnackType::class, $pizza);
         $form->handleRequest($request);
 
         if ($form->isValid() && $form->isSubmitted()){
@@ -51,9 +51,9 @@ class AdminPizzaController extends Controller
             $entitymanager->persist($pizza);
             $entitymanager->flush();
 
-            return $this->redirectToRoute('admin_pizza');
+            return $this->redirectToRoute('admin_index');
         } else {
-            return $this->render('@App/adminPizza/update.html.twig',
+            return $this->render('@App/adminSnack/update.html.twig',
                 [
                     'pizza' => $pizza,
                     'form' => $form->createView()
@@ -63,11 +63,11 @@ class AdminPizzaController extends Controller
     }
 
     /**
-     * @Route("/admin/pizza/create/", name="admin_pizza_create")
+     * @Route("/admin/snack/create/", name="admin_snack_create")
      */
     public function CreateAction(Request $request)
     {
-        $form = $this->createForm(PizzaType::class, new Pizza());
+        $form = $this->createForm(SnackType::class, new Snack());
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()){
@@ -77,22 +77,23 @@ class AdminPizzaController extends Controller
             $entityManager->persist($pizza);
             $entityManager->flush();
 
-            return $this->redirectToRoute('admin_pizza');
+            return $this->redirectToRoute('admin_index');
         } else{
-            return $this->render('@App/adminPizza/create.html.twig',
+            return $this->render('@App/adminSnack/create.html.twig',
                 [
                     'form' => $form->createView()
                 ]
             );
         }
+
     }
 
     /**
-     * @Route("/admin/pizza/delete/{id}", name="admin_pizza_delete")
+     * @Route("/admin/snack/delete/{id}", name="admin_snack_delete")
      */
     public function DeleteAction($id)
     {
-        $repository = $this->getDoctrine()->getRepository(Pizza::class);
+        $repository = $this->getDoctrine()->getRepository(Snack::class);
 
         $entityManager = $this->getDoctrine()->getManager();
 
@@ -101,6 +102,6 @@ class AdminPizzaController extends Controller
         $entityManager->remove($pizza);
         $entityManager->flush();
 
-        return new Response("Pizza supprimé");
+        return new Response("Snack supprimé");
     }
 }
