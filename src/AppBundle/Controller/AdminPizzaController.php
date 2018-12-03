@@ -10,7 +10,7 @@ namespace AppBundle\Controller;
 
 
 use AppBundle\Entity\pizza;
-use AppBundle\Form\PizzaType;
+use AppBundle\Form\Type\PizzaType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
