@@ -45,7 +45,7 @@ class snack
     /**
      * @var string
      *
-     * @ORM\Column(name="ingredients", type="string", length=45)
+     * @ORM\Column(name="ingredients", type="string", length=100)
      */
     private $ingredients;
 

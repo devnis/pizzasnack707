@@ -45,10 +45,9 @@ class pizza
     /**
      * @var string
      *
-     * @ORM\Column(name="ingredients", type="string", length=45)
+     * @ORM\Column(name="ingredients", type="string", length=80)
      */
     private $ingredients;
-
 
     /**
      * Get id
@@ -147,6 +146,5 @@ class pizza
     {
         $this->ingredients = $ingredients;
     }
-
 }
 
