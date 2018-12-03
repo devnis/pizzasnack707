@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="tranche")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\trancheRepository")
  */
-class tranche
+class Tranche
 {
     /**
      * @var int

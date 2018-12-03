@@ -63,4 +63,30 @@ class AdminPizzaController extends Controller
         }
     }
 
+    /**
+     *
+     */
+    public function AdminCreateAction(Request $request)
+    {
+        $form = $this->createForm(PizzaType::class, new pizza());
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()){
+            $pizza = $form->getData();
+
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($pizza);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('admin_index');
+        } else{
+            return $this->render('@App/createAdmin.html.twig',
+                [
+                    'form' => $form->createView()
+                ]
+            );
+        }
+
+    }
+
 }
