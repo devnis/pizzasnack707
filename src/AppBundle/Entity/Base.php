@@ -28,6 +28,12 @@ class base
      */
     private $type;
 
+    /**
+     * @var string
+     * @ORM\OneToMany(targetEntity="pizza", mappedBy="base")
+     */
+    private $pizza;
+
 
     /**
      * Get id
@@ -62,5 +68,22 @@ class base
     {
         return $this->type;
     }
+
+    /**
+     * @return string
+     */
+    public function getPizza()
+    {
+        return $this->pizza;
+    }
+
+    /**
+     * @param string $pizza
+     */
+    public function setPizza($pizza)
+    {
+        $this->pizza = $pizza;
+    }
+
 }
 

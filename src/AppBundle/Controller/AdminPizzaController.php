@@ -15,7 +15,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
-class AdminController extends Controller
+class AdminPizzaController extends Controller
 {
 
     /**
@@ -24,7 +24,7 @@ class AdminController extends Controller
 
     public function AdminIndexAction()
     {
-        $repository = $this->getDoctrine()->getRepository(pizza::class);
+        $repository = $this->getDoctrine()->getRepository(Pizza::class);
         $pizzas = $repository->findAll();
 
         return $this->render('@App/readAdmin.html.twig',
@@ -39,7 +39,7 @@ class AdminController extends Controller
      */
     public function AdminUpdateAction(Request $request, $id)
     {
-        $repository = $this->getDoctrine()->getRepository(pizza::class);
+        $repository = $this->getDoctrine()->getRepository(Pizza::class);
         $pizza = $repository->find($id);
 
         $form = $this->createForm(PizzaType::class, $pizza);

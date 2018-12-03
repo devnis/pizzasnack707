@@ -1,7 +1,9 @@
 <?php
 
-namespace AppBundle\Form;
+namespace AppBundle\Form\Type;
 
+use AppBundle\Entity\pizza;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
@@ -19,10 +21,15 @@ class PizzaType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('name', TextType::class, ['label' => 'Nom'])
-            ->add('base', ChoiceType::class, ['label' => 'Base'])
+            ->add('base', EntityType::class,
+                [
+                    'class' => 'Base.php',
+                    'choice_label' => 'type'
+                ]
+            )
             ->add('ingredients', TextType::class, ['label' => 'Ingredient'])
-            ->add('price', IntegerType::class, ['label' => 'Prix', 'scale' => '1'])
-            ->add('img', FileType::class, ['label' => 'Image'])
+            ->add('price', TextType::class, ['label' => 'Prix'])
+//            ->add('img', FileType::class, ['label' => 'Image'])
             ->add('submit', SubmitType::class, ['label' => 'Enregistrer la pizza']);
     }
 

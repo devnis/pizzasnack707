@@ -50,6 +50,11 @@ class pizza
     private $ingredients;
 
     /**
+     * @ORM\ManyToOne(targetEntity="base", inversedBy="pizza")
+     */
+    private $base;
+
+    /**
      * Get id
      *
      * @return int
@@ -145,6 +150,22 @@ class pizza
     public function setIngredients($ingredients)
     {
         $this->ingredients = $ingredients;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getBase()
+    {
+        return $this->base;
+    }
+
+    /**
+     * @param mixed $base
+     */
+    public function setBase($base)
+    {
+        $this->base = $base;
     }
 }
 
