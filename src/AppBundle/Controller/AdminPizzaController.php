@@ -26,7 +26,7 @@ class AdminPizzaController extends Controller
         $repository = $this->getDoctrine()->getRepository(Pizza::class);
         $pizzas = $repository->findAll();
 
-        return $this->render('@App/readAdmin.html.twig',
+        return $this->render('@App/adminPizza/read.html.twig',
             [
                 'pizzas' => $pizzas
             ]
@@ -53,7 +53,7 @@ class AdminPizzaController extends Controller
 
             return $this->redirectToRoute('admin_index');
         } else {
-            return $this->render('@App/updateAdmin.html.twig',
+            return $this->render('@App/adminPizza/update.html.twig',
                 [
                     'pizza' => $pizza,
                     'form' => $form->createView()
@@ -79,7 +79,7 @@ class AdminPizzaController extends Controller
 
             return $this->redirectToRoute('admin_index');
         } else{
-            return $this->render('@App/createAdmin.html.twig',
+            return $this->render('@App/adminPizza/create.html.twig',
                 [
                     'form' => $form->createView()
                 ]
