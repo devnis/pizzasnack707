@@ -2,7 +2,7 @@
 
 namespace AppBundle\Form\Type;
 
-use AppBundle\Entity\pizza;
+use AppBundle\Entity\Pizza;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -39,7 +39,7 @@ class PizzaType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\pizza'
+            'data_class' => 'AppBundle\Entity\Pizza'
         ));
     }
 
@@ -48,6 +48,6 @@ class PizzaType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'appbundle_pizza';
+        return 'appbundle_Pizza';
     }
 }

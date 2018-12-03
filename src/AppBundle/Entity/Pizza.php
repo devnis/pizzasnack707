@@ -7,8 +7,8 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * pizza
  *
- * @ORM\Table(name="pizza")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\pizzaRepository")
+ * @ORM\Table(name="Pizza")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\PizzaRepository")
  */
 class Pizza
 {
@@ -50,7 +50,7 @@ class Pizza
     private $ingredients;
 
     /**
-     * @ORM\ManyToOne(targetEntity="base", inversedBy="pizza")
+     * @ORM\ManyToOne(targetEntity="Base", inversedBy="Pizza")
      */
     private $base;
 

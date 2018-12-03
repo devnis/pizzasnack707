@@ -2,8 +2,13 @@
 
 {% block content %}
 
-<h2 class="text-light text-left mt-5">Liste des pizzas</h2>
-<table class="table">
+    <h2 class="text-light text-left mt-5">Liste des pizzas</h2>
+    <a href="{{ path('admin_create_pizza') }}">
+        <button type="button" class="btn btn-success">
+            Créer une pizza
+        </button>
+    </a>
+    <table class="table">
     <thead>
     <tr class="thead-dark text-center">
         <th scope="col">Name</th>
@@ -12,6 +17,7 @@
         <th scope="col">Voir</th>
         <th scope="col">Editer</th>
         <th scope="col">Supprimer</th>
+
     </tr>
     </thead>
     <tbody>
@@ -32,9 +38,9 @@
             </td>
             <td class="text-center">
                 {#<a href="{{ path('livre', {'id':livre.id}) }}">#}
-                    <button type="button" class="btn btn-success">
-                        Voir
-                    </button>
+                <button type="button" class="btn btn-success">
+                    Voir
+                </button>
                 {#</a>#}
             </td>
             <td class="text-center">

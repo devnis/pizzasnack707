@@ -9,7 +9,7 @@
 namespace AppBundle\Controller;
 
 
-use AppBundle\Entity\pizza;
+use AppBundle\Entity\Pizza;
 use AppBundle\Form\Type\PizzaType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -17,11 +17,9 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class AdminPizzaController extends Controller
 {
-
     /**
      * @Route("/admin/", name="admin_index")
      */
-
     public function AdminIndexAction()
     {
         $repository = $this->getDoctrine()->getRepository(Pizza::class);
@@ -64,11 +62,11 @@ class AdminPizzaController extends Controller
     }
 
     /**
-     *
+     * @Route("/admin/update/pizza/", name="admin_create_pizza")
      */
     public function AdminCreateAction(Request $request)
     {
-        $form = $this->createForm(PizzaType::class, new pizza());
+        $form = $this->createForm(PizzaType::class, new Pizza());
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()){

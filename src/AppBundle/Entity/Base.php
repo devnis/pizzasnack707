@@ -7,8 +7,8 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * base
  *
- * @ORM\Table(name="base")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\baseRepository")
+ * @ORM\Table(name="Base")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\BaseRepository")
  */
 class Base
 {
@@ -30,7 +30,7 @@ class Base
 
     /**
      * @var string
-     * @ORM\OneToMany(targetEntity="pizza", mappedBy="base")
+     * @ORM\OneToMany(targetEntity="Pizza", mappedBy="Base")
      */
     private $pizza;
 
