@@ -13,6 +13,7 @@ use AppBundle\Entity\Pizza;
 use AppBundle\Form\Type\PizzaType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class AdminPizzaController extends Controller
@@ -20,7 +21,7 @@ class AdminPizzaController extends Controller
     /**
      * @Route("/admin/", name="admin_index")
      */
-    public function AdminIndexAction()
+    public function IndexAction()
     {
         $repository = $this->getDoctrine()->getRepository(Pizza::class);
         $pizzas = $repository->findAll();
@@ -35,7 +36,7 @@ class AdminPizzaController extends Controller
     /**
      * @Route("/admin/update/pizza/{id}", name="admin_update_pizza")
      */
-    public function AdminUpdateAction(Request $request, $id)
+    public function UpdateAction(Request $request, $id)
     {
         $repository = $this->getDoctrine()->getRepository(Pizza::class);
         $pizza = $repository->find($id);
@@ -64,7 +65,7 @@ class AdminPizzaController extends Controller
     /**
      * @Route("/admin/update/pizza/", name="admin_create_pizza")
      */
-    public function AdminCreateAction(Request $request)
+    public function CreateAction(Request $request)
     {
         $form = $this->createForm(PizzaType::class, new Pizza());
         $form->handleRequest($request);
@@ -87,4 +88,20 @@ class AdminPizzaController extends Controller
 
     }
 
+    /**
+     * @Route("/admin/delete/pizza/{id}", name="admin_delete_pizza")
+     */
+    public function DeleteAction($id)
+    {
+        $repository = $this->getDoctrine()->getRepository(Pizza::class);
+
+        $entityManager = $this->getDoctrine()->getManager();
+
+        $pizza = $repository->find($id);
+
+        $entityManager->remove($pizza);
+        $entityManager->flush();
+
+        return new Response("Pizza supprimé");
+    }
 }

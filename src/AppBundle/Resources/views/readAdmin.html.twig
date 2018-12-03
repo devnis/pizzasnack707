@@ -52,10 +52,10 @@
             </td>
             <td>
                 <div class="text-center">
-                    {#<form action="{{ path('auteur_supp', { 'id': auteur.id }) }}" method="get">#}
+                    <a href="{{ path('admin_delete_pizza', { 'id': pizza.id }) }}">
                     <input type="hidden" name="deleteAuthor" value="DELETE" />
                     <button type="submit" class="btn btn-danger">Suppr</button>
-                    {#</form>#}
+                    </a>
                 </div>
             </td>
         </tr>

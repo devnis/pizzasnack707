@@ -50,7 +50,7 @@ class Pizza
     private $ingredients;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Base", inversedBy="Pizza")
+     * @ORM\ManyToOne(targetEntity="Base", inversedBy="pizza")
      */
     private $base;
 

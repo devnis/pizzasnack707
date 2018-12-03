@@ -30,7 +30,7 @@ class Base
 
     /**
      * @var string
-     * @ORM\OneToMany(targetEntity="Pizza", mappedBy="Base")
+     * @ORM\OneToMany(targetEntity="Pizza", mappedBy="base")
      */
     private $pizza;
 
