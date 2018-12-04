@@ -28,6 +28,15 @@ class Commande
      */
     private $date;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="Pizza")
+     */
+    private $pizza;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="Snack")
+     */
+    private $snack;
 
     /**
      * Get id
@@ -62,5 +71,54 @@ class Commande
     {
         return $this->date;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getTranche()
+    {
+        return $this->tranche;
+    }
+
+    /**
+     * @param mixed $tranche
+     */
+    public function setTranche($tranche)
+    {
+        $this->tranche = $tranche;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPizza()
+    {
+        return $this->pizza;
+    }
+
+    /**
+     * @param mixed $pizza
+     */
+    public function setPizza($pizza)
+    {
+        $this->pizza = $pizza;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSnack()
+    {
+        return $this->snack;
+    }
+
+    /**
+     * @param mixed $snack
+     */
+    public function setSnack($snack)
+    {
+        $this->snack = $snack;
+    }
+
 }
 
