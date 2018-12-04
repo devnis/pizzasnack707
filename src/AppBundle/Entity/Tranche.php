@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="tranche")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\trancheRepository")
  */
-class HorraireTranche
+class Tranche
 {
     /**
      * @var int
@@ -29,6 +29,12 @@ class HorraireTranche
     private $heureDeTranche;
 
     /**
+     * @var string
+     * @ORM\OneToMany(targetEntity="VerifTranche", mappedBy="tranche")
+     */
+    private $verifTranche;
+
+    /**
      * Get id
      *
      * @return int
@@ -43,7 +49,7 @@ class HorraireTranche
      *
      * @param string $heureDeTranche
      *
-     * @return HorraireTranche
+     * @return Tranche
      */
     public function setHeureDeTranche($heureDeTranche)
     {
@@ -61,5 +67,22 @@ class HorraireTranche
     {
         return $this->heureDeTranche;
     }
+
+    /**
+     * @return string
+     */
+    public function getVerifTranche()
+    {
+        return $this->verifTranche;
+    }
+
+    /**
+     * @param string $verifTranche
+     */
+    public function setVerifTranche($verifTranche)
+    {
+        $this->verifTranche = $verifTranche;
+    }
+
 }
 

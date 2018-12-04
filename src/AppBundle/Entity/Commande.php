@@ -39,6 +39,11 @@ class Commande
     private $snack;
 
     /**
+     * @ORM\ManyToOne(targetEntity="VerifTranche", inversedBy="commande")
+     */
+    private $verifTranche;
+
+    /**
      * Get id
      *
      * @return int
@@ -120,5 +125,20 @@ class Commande
         $this->snack = $snack;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getVerifTranche()
+    {
+        return $this->verifTranche;
+    }
+
+    /**
+     * @param mixed $verifTranche
+     */
+    public function setVerifTranche($verifTranche)
+    {
+        $this->verifTranche = $verifTranche;
+    }
 }
 
