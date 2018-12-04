@@ -12,6 +12,7 @@
     <thead>
     <tr class="thead-dark text-center">
         <th scope="col">Name</th>
+        <th scope="col">Base</th>
         <th scope="col">Ingredients</th>
         <th scope="col">Price</th>
         <th scope="col">Voir</th>
@@ -29,6 +30,9 @@
                     {{ pizza.name }}
                 </p>
                 {#</a>#}
+            </td>
+            <td class="text-center">
+                {{ pizza.base.type }}
             </td>
             <td class="text-center">
                 {{ pizza.ingredients }}

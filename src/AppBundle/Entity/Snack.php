@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * snack
  *
  * @ORM\Table(name="snack")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\snackRepository")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\SnackRepository")
  */
 class Snack
 {
@@ -48,6 +48,11 @@ class Snack
      * @ORM\Column(name="ingredients", type="string", length=100)
      */
     private $ingredients;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="CatSnack", inversedBy="snack")
+     */
+    private $catSnack;
 
     /**
      * Get id
@@ -139,5 +144,20 @@ class Snack
         $this->ingredients = $ingredients;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getCatSnack()
+    {
+        return $this->catSnack;
+    }
+
+    /**
+     * @param mixed $catSnack
+     */
+    public function setCatSnack($catSnack)
+    {
+        $this->catSnack = $catSnack;
+    }
 }
 

@@ -51,7 +51,7 @@ class AdminSnackController extends Controller
             $entitymanager->persist($pizza);
             $entitymanager->flush();
 
-            return $this->redirectToRoute('admin_index');
+            return $this->redirectToRoute('admin_snack');
         } else {
             return $this->render('@App/adminSnack/update.html.twig',
                 [
@@ -77,7 +77,7 @@ class AdminSnackController extends Controller
             $entityManager->persist($pizza);
             $entityManager->flush();
 
-            return $this->redirectToRoute('admin_index');
+            return $this->redirectToRoute('admin_snack');
         } else{
             return $this->render('@App/adminSnack/create.html.twig',
                 [
@@ -85,7 +85,6 @@ class AdminSnackController extends Controller
                 ]
             );
         }
-
     }
 
     /**

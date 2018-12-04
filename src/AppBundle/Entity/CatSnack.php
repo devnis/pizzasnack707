@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * catSnack
  *
  * @ORM\Table(name="cat_snack")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\catSnackRepository")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\CatSnackRepository")
  */
 class CatSnack
 {
@@ -28,6 +28,11 @@ class CatSnack
      */
     private $type;
 
+    /**
+     * @var string
+     * @ORM\OneToMany(targetEntity="Snack", mappedBy="catSnack")
+     */
+    private $snack;
 
     /**
      * Get id
@@ -62,5 +67,38 @@ class CatSnack
     {
         return $this->type;
     }
+
+    /**
+     * @return string
+     */
+    public function getPizza()
+    {
+        return $this->pizza;
+    }
+
+    /**
+     * @param string $pizza
+     */
+    public function setPizza($pizza)
+    {
+        $this->pizza = $pizza;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSnack()
+    {
+        return $this->snack;
+    }
+
+    /**
+     * @param string $snack
+     */
+    public function setSnack($snack)
+    {
+        $this->snack = $snack;
+    }
+
 }
 

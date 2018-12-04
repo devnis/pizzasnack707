@@ -21,20 +21,20 @@
     </tr>
     </thead>
     <tbody>
-    {% for pizza in pizzas %}
+    {% for snack in snacks %}
         <tr class="bg-light">
             <td>
                 {#<a href="{{ path('page_auteur', {'id':auteur.id}) }}">#}
                 <p>
-                    {{ pizza.name }}
+                    {{ snack.name }}
                 </p>
                 {#</a>#}
             </td>
             <td class="text-center">
-                {{ pizza.ingredients }}
+                {{ snack.ingredients }}
             </td>
             <td class="text-center">
-                {{ pizza.price }}
+                {{ snack.price }}
             </td>
             <td class="text-center">
                 {#<a href="{{ path('livre', {'id':livre.id}) }}">#}
@@ -44,7 +44,7 @@
                 {#</a>#}
             </td>
             <td class="text-center">
-                <a href="{{ path('admin_pizza_update', {'id':pizza.id}) }}">
+                <a href="{{ path('admin_snack_update', {'id':snack.id}) }}">
                     <button type="button" class="btn btn-warning">
                         Modifier
                     </button>
@@ -52,7 +52,7 @@
             </td>
             <td>
                 <div class="text-center">
-                    <a href="{{ path('admin_pizza_delete', { 'id': pizza.id }) }}">
+                    <a href="{{ path('admin_snack_delete', { 'id': snack.id }) }}">
                     <input type="hidden" name="deleteAuthor" value="DELETE" />
                     <button type="submit" class="btn btn-danger">Suppr</button>
                     </a>

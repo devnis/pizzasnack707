@@ -16,13 +16,13 @@ class SnackType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('name', TextType::class, ['label' => 'Nom'])
-            ->add('base', EntityType::class,
-                [
-                    'class' => 'AppBundle:Base',
-                    'choice_label' => 'type'
-                ]
-            )
+        $builder->add('catSnack', EntityType::class,
+            [
+                'class' => 'AppBundle:CatSnack',
+                'choice_label' => 'type'
+            ]
+        )
+            ->add('name', TextType::class, ['label' => 'Nom'])
             ->add('ingredients', TextType::class, ['label' => 'Ingredient'])
             ->add('price', TextType::class, ['label' => 'Prix'])
 //            ->add('img', FileType::class, ['label' => 'Image'])
