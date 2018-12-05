@@ -8,7 +8,8 @@ use Doctrine\ORM\Mapping as ORM;
  * commande
  *
  * @ORM\Table(name="commande")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\commandeRepository")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\CommandeRepository")
+ * @ORM\HasLifecycleCallbacks()
  */
 class Commande
 {
@@ -29,11 +30,13 @@ class Commande
     private $date;
 
     /**
+     * @ORM\Column(name="pizza", type="integer", nullable=true)
      * @ORM\ManyToMany(targetEntity="Pizza")
      */
     private $pizza;
 
     /**
+     * @ORM\Column(name="snack", type="integer", nullable=true)
      * @ORM\ManyToMany(targetEntity="Snack")
      */
     private $snack;
@@ -42,6 +45,12 @@ class Commande
      * @ORM\ManyToOne(targetEntity="VerifTranche", inversedBy="commande")
      */
     private $verifTranche;
+
+//    /**
+//     * @ORM\Column(name="tranche", type="integer")
+//     * @ORM\ManyToOne(targetEntity="Tranche", inversedBy="commande")
+//     */
+//    private $tranche;
 
     /**
      * Get id
@@ -54,18 +63,13 @@ class Commande
     }
 
     /**
-     * Set date
-     *
-     * @param \DateTime $date
-     *
-     * @return commande
+     * @ORM\PrePersist
      */
-    public function setDate($date)
+    public function setDateValue()
     {
-        $this->date = $date;
-
-        return $this;
+        $this->date = new \DateTime();
     }
+
 
     /**
      * Get date
@@ -75,22 +79,6 @@ class Commande
     public function getDate()
     {
         return $this->date;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getTranche()
-    {
-        return $this->tranche;
-    }
-
-    /**
-     * @param mixed $tranche
-     */
-    public function setTranche($tranche)
-    {
-        $this->tranche = $tranche;
     }
 
     /**
@@ -140,5 +128,21 @@ class Commande
     {
         $this->verifTranche = $verifTranche;
     }
+
+//    /**
+//     * @return mixed
+//     */
+//    public function getTranche()
+//    {
+//        return $this->tranche;
+//    }
+//
+//    /**
+//     * @param mixed $tranche
+//     */
+//    public function setTranche($tranche)
+//    {
+//        $this->tranche = $tranche;
+//    }
 }
 

@@ -9,7 +9,10 @@
 namespace AppBundle\Controller;
 
 
+use AppBundle\Entity\Commande;
+use AppBundle\Form\Type\CommandeType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 class CommandeController extends Controller
@@ -23,10 +26,27 @@ class CommandeController extends Controller
     }
 
     /**
-     *
+     * @Route("/commande", name="commande")
      */
-    public function CommandAction()
+    public function CommandAction(Request $request)
     {
+        $form = $this->createForm(CommandeType::class, new Commande());
+        $form->handleRequest($request);
 
+        if ($form->isSubmitted() && $form->isValid()){
+            $commande = $form->getData();
+
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($commande);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('commande');
+        } else{
+            return $this->render('@App/ajoutCommande.html.twig',
+                [
+                    'form' => $form->createView()
+                ]
+            );
+        }
     }
 }

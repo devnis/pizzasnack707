@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * tranche
  *
  * @ORM\Table(name="tranche")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\trancheRepository")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\TrancheRepository")
  */
 class Tranche
 {
@@ -33,6 +33,12 @@ class Tranche
      * @ORM\OneToMany(targetEntity="VerifTranche", mappedBy="tranche")
      */
     private $verifTranche;
+
+//    /**
+//     * @var string
+//     * @ORM\OneToMany(targetEntity="Commande", mappedBy="tranche")
+//     */
+//    private $commande;
 
     /**
      * Get id
@@ -84,5 +90,20 @@ class Tranche
         $this->verifTranche = $verifTranche;
     }
 
+//    /**
+//     * @return string
+//     */
+//    public function getCommande()
+//    {
+//        return $this->commande;
+//    }
+//
+//    /**
+//     * @param string $commande
+//     */
+//    public function setCommande($commande)
+//    {
+//        $this->commande = $commande;
+//    }
 }
 

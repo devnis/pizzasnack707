@@ -47,9 +47,9 @@ class AdminPizzaController extends Controller
         if ($form->isValid() && $form->isSubmitted()){
             $pizza = $form->getData();
 
-            $entitymanager = $this->getDoctrine()->getManager();
-            $entitymanager->persist($pizza);
-            $entitymanager->flush();
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($pizza);
+            $entityManager->flush();
 
             return $this->redirectToRoute('admin_pizza');
         } else {

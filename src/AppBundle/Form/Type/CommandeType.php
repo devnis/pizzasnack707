@@ -23,17 +23,25 @@ class CommandeType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('', TextType::class, ['label' => 'Nom'])
-            ->add('base', EntityType::class,
+        $builder->add('pizza', EntityType::class,
                 [
-                    'class' => 'AppBundle:Base',
-                    'choice_label' => 'type'
+                    'class' => 'AppBundle:Pizza',
+                    'choice_label' => 'name'
                 ]
             )
-            ->add('ingredients', TextType::class, ['label' => 'Ingredient'])
-            ->add('price', TextType::class, ['label' => 'Prix'])
-//            ->add('img', FileType::class, ['label' => 'Image'])
-            ->add('submit', SubmitType::class, ['label' => 'Enregistrer la pizza']);
+            ->add('snack', EntityType::class,
+                [
+                    'class' => 'AppBundle:Snack',
+                    'choice_label' => 'name'
+                ]
+            )
+            ->add('verifTranche', EntityType::class,
+                [
+                    'class' => 'AppBundle:Commande',
+                    'choice_label' => 'date'
+                ]
+            )
+            ->add('submit', SubmitType::class, ['label' => 'Enregistrer la commande']);
     }
 
     /**
@@ -42,7 +50,7 @@ class CommandeType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\Pizza'
+            'data_class' => 'AppBundle\Entity\Commande'
         ));
     }
 
@@ -51,6 +59,6 @@ class CommandeType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'appbundle_Pizza';
+        return 'appbundle_Commande';
     }
 }
