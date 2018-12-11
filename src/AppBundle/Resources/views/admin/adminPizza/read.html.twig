@@ -1,0 +1,67 @@
+{% extends "@App/baseAdmin.html.twig" %}
+
+{% block content %}
+
+    <h2 class="text-light text-left mt-5">Liste des pizzas</h2>
+    <a href="{{ path('admin_pizza_create') }}">
+        <button type="button" class="btn btn-success">
+            Créer une pizza
+        </button>
+    </a>
+    <table class="table">
+    <thead>
+    <tr class="thead-dark text-center">
+        <th scope="col">Name</th>
+        <th scope="col">Base</th>
+        <th scope="col">Ingredients</th>
+        <th scope="col">Price</th>
+        <th scope="col">Voir</th>
+        <th scope="col">Editer</th>
+        <th scope="col">Supprimer</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    {% for pizza in pizzas %}
+        <tr class="bg-light">
+            <td>
+                {#<a href="{{ path('page_auteur', {'id':auteur.id}) }}">#}
+                <p>
+                    {{ pizza.name }}
+                </p>
+                {#</a>#}
+            </td>
+            <td class="text-center">
+                {{ pizza.base.type }}
+            </td>
+            <td class="text-center">
+                {{ pizza.ingredients }}
+            </td>
+            <td class="text-center">
+                {{ pizza.price }}
+            </td>
+            <td class="text-center">
+                {#<a href="{{ path('livre', {'id':livre.id}) }}">#}
+                <button type="button" class="btn btn-success">
+                    Voir
+                </button>
+                {#</a>#}
+            </td>
+            <td class="text-center">
+                <a href="{{ path('admin_pizza_update', {'id':pizza.id}) }}">
+                    <button type="button" class="btn btn-warning">
+                        Modifier
+                    </button>
+                </a>
+            </td>
+            <td>
+                <div class="text-center">
+                    <a href="{{ path('admin_pizza_delete', { 'id':pizza.id }) }}">
+                    <input type="hidden" name="deleteAuthor" value="DELETE" />
+                    <button type="submit" class="btn btn-danger">Suppr</button>
+                    </a>
+                </div>
+            </td>
+        </tr>
+    {% endfor %}
+{% endblock %}

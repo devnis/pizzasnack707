@@ -1,0 +1,30 @@
+{% extends "@App/User/baseUsers.html.twig" %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+
+        {% for pizza in pizzas   %}
+
+                <div class="col-4 p-3 text-center">
+                    <div>
+                        {{ pizza.name }}
+                    </div>
+                    <div>
+                        {{ pizza.ingredients }}
+                    </div>
+                    <div>
+                        {{ pizza.price }}
+                    </div>
+                    <div>
+                    <input type="submit" class="btn btn-outline-success" value="Commander">
+                    </div>
+                </div>
+
+        {% endfor %}
+
+    </div>
+</div>
+
+{% endblock %}

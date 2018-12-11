@@ -10,6 +10,8 @@ parameters:
 
 framework:
     #esi: ~
+    templating:
+        engines: ['twig']
     #translator: { fallbacks: ['%locale%'] }
     secret: '%secret%'
     router:
@@ -69,3 +71,11 @@ swiftmailer:
 sensio_framework_extra:
    router:
         annotations: false
+
+fos_user:
+    db_driver: orm # other valid values are 'mongodb' and 'couchdb'
+    firewall_name: main
+    user_class: AppBundle\Entity\User
+    from_email:
+        address: "denis.machado@lapiscine.pro"
+        sender_name: "denis.machado@lapiscine.pro"
