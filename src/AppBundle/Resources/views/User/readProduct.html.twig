@@ -12,10 +12,13 @@
                         {{ pizza.name }}
                     </div>
                     <div>
+                        <img src="{{ asset('img/pizzaOignonsjpg') }}" alt="pizza" class="img-fluid">
+                    </div>
+                    <div>
                         {{ pizza.ingredients }}
                     </div>
                     <div>
-                        {{ pizza.price }}
+                        {{ pizza.price ~ '€' }}
                     </div>
                     <div>
                     <input type="submit" class="btn btn-outline-success" value="Commander">
