@@ -32,34 +32,34 @@
 
 {#todo Finir la nav#}
 
-<header>
-    <div class="container-fluid header">
-        <div class="row pt-2 pb-2">
-            <div class="col-2">
-                <img src="{{ asset('img/logo.png') }}" alt="logo de Pizza 707">
+<header class="header--sticky">
+        <div class="container-fluid header">
+            <div class="row pt-2 pb-2 ">
+                <div class="col-2">
+                    <img src="{{ asset('img/logo.png') }}" alt="logo de Pizza 707">
+                </div>
+                <div class="offset-2 col-2">
+                    <a href="">A propos</a>
+                </div>
+                <div class="col-2">
+                    <a href="">Manger</a>
+                </div>
+                {#todo: Mettre une icone panier#}
+                <div class="col-2">
+                    <a href="">
+                        <img src="" alt="">
+                    </a>
+                </div>
             </div>
-            <div class="offset-2 col-2">
-                <a href="">A propos</a>
-            </div>
-            <div class="col-2">
-                <a href="">Manger</a>
-            </div>
-            {#todo: Mettre une icone panier#}
-            <col-2>
-                <a href="">
-                    <img src="" alt="">
-                </a>
-            </col-2>
         </div>
-    </div>
 </header>
 
 
 
 <section>
-{% block content %}
+    {% block content %}
 
-{% endblock %}
+    {% endblock %}
 </section>
 
 <footer>
