@@ -29,29 +29,31 @@
     <meta name="theme-color" content="#ffffff">
 </head>
 <body>
-
-{#todo Finir la nav#}
-
-<header class="header--sticky">
-        <div class="container-fluid header">
-            <div class="row pt-2 pb-2 ">
-                <div class="col-2">
-                    <img src="{{ asset('img/logo.png') }}" alt="logo de Pizza 707">
-                </div>
-                <div class="offset-2 col-2">
-                    <a href="">A propos</a>
-                </div>
-                <div class="col-2">
-                    <a href="">Manger</a>
-                </div>
-                {#todo: Mettre une icone panier#}
-                <div class="col-2">
-                    <a href="">
-                        <img src="" alt="">
-                    </a>
-                </div>
-            </div>
+<header>
+    {#todo Faire les liens a#}
+    {#todo Police et color hoover#}
+    {#todo Modif p m des liens#}
+    <nav class="navbar navbar-expand-lg navbar-light header navbar-custom">
+        <a class="navbar-brand" href="#">
+            <img src="{{ asset('img/logo.png') }}" alt="logo de Pizza 707">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse txt-org justify-content-lg-end" id="navbarNav">
+            <ul class="navbar-nav justify-content-lg-between">
+                <li class="nav-item">
+                    <a class="nav-link r-lg-5 ml-lg-5 pr-lg-5 pl-lg-5" href="#">Accueil</a>
+                </li>
+                <li class="nav-item mr-lg-5 ml-lg-5 pr-lg-5 pl-lg-5">
+                    <a class="nav-link" href="#">A manger</a>
+                </li>
+                <li class="nav-item mr-lg-5 ml-lg-5 pr-lg-5 pl-lg-5">
+                    <a class="nav-link" href="#">A propos</a>
+                </li>
+            </ul>
         </div>
+    </nav>
 </header>
 
 
@@ -63,6 +65,8 @@
 </section>
 
 <footer>
+    {#todo faire le footer#}
+
 
 </footer>
 
