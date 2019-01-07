@@ -1,4 +1,4 @@
-.header {
+.bg-black {
   background-color: #141414; }
 
 .header--sticky {
@@ -8,5 +8,11 @@
 
 .navbar-custom .navbar-nav .nav-link {
   color: #d19569; }
+
+.c-orange {
+  color: #d19569; }
+
+.f-bold {
+  font-weight: bold; }
 
 /*# sourceMappingURL=style.css.map */
