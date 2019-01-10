@@ -1,33 +1,210 @@
 {% extends "@App/User/baseUsers.html.twig" %}
 
+
 {% block content %}
 
-<div class="container">
-    <div class="row">
+    <div class="container-fluid">
+        <div class="row">
+            {#Aside nav #}
+            <div class="col-3 bg-black c-orange p-1 aside--sticky aside--hg">
+                <h2 class="text-center">
+                    Notre carte
+                </h2>
+                <ul class="ul-style pt-3 pb-3">
+                    <li class="pt-3 pb-3">
+                        <a href="">
+                            LES PIZZAS
+                        </a>
+                        <ul class="ul-style">
+                            <li>
+                                <a href="">
+                                    Base tomate
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    Base crème
+                                </a>
+                            </li>
+                        </ul>
+                    <li class="pt-3 pb-3">
+                        <a href="">
+                            SNACK
+                        </a>
+                        <ul class="ul-style">
+                            <li>
+                                <a href="">
+                                    Big Bunn's
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    Snack
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    Panini
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
 
-        {% for pizza in pizzas   %}
+            <div class="offset-3 col-6">
+                <div class="row">
 
-                <div class="col-4 p-3 text-center">
-                    <div>
-                        {{ pizza.name }}
+                    {#todo mettre en forme les éléments#}
+
+                    {% for pizza in pizzas %}
+
+                        <div class="col-6 p-1">
+                            <div class="text-center">
+                                <img src="{{ asset('img/pizzaOignonsjpg') }}" alt="pizza" class="img-fluid">
+                            </div>
+                            <div>
+                                {{ pizza.name }}
+                            </div>
+                            <div>
+                                {{ pizza.price ~ ' €' }}
+                            </div>
+                            <div class="p-1">
+                                {{ pizza.ingredients }}
+                            </div>
+                            <div>
+                                <input type="submit" class="btn btn-outline-success" value="Commander">
+                            </div>
+                        </div>
+
+                    {% endfor %}
+
+                    {% for snack in snacks %}
+
+                        <div class="col-6 p-1 text-center">
+                            <div>
+                                {{ snack.name }}
+                            </div>
+                            <div>
+                                {#<img src="{{ asset('') }}" alt="snack" class="img-fluid">#}
+                            </div>
+                            <div class="pt-1 pb-1">
+                                {{ snack.ingredients }}
+                            </div>
+                            <div>
+                                {{ snack.price ~ ' €' }}
+                            </div>
+                            <div>
+                                <input type="submit" class="btn btn-outline-success" value="Commander">
+                            </div>
+                        </div>
+
+                    {% endfor %}
+
+                </div>
+            </div>
+            <div class="offset-9 col-3 bg-black c-orange aside--sticky aside--hg">
+
+                {#{% for article in %}#}
+                <div class="col-12 cart--br pt-2 pb-2">
+                    <div class="row">
+                        <div class="col-7">
+                            {{ pizzas.1.name }}
+                        </div>
+                        <div class="col-5">
+                            <form action="">
+                                <div class="form-group">
+                                    <select class="form-control" id="exampleFormControlSelect1">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                        <option>6</option>
+                                        <option>7</option>
+                                        <option>8</option>
+                                        <option>9</option>
+                                        <option>10</option>
+                                    </select>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-7">
+                            {{ pizzas.1.price ~ ' €' }}
+                        </div>
+                        <div class="col-5 justify-content-center">
+                            <a href="" class="c-orange">
+                                <div class="row">
+                                    <i class="fas fa-trash-alt pt-1"></i>
+                                    <p class="pl-1 mb-0">
+                                        Supprimer
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-                    <div>
-                        <img src="{{ asset('img/pizzaOignonsjpg') }}" alt="pizza" class="img-fluid">
-                    </div>
-                    <div>
-                        {{ pizza.ingredients }}
-                    </div>
-                    <div>
-                        {{ pizza.price ~ '€' }}
-                    </div>
-                    <div>
-                    <input type="submit" class="btn btn-outline-success" value="Commander">
+                </div>
+                <div class="col-12 cart--br pt-2 pb-2">
+                    <div class="row">
+                        <div class="col-7">
+                            {{ pizzas.2.name }}
+                        </div>
+                        <div class="col-5">
+                            <form action="">
+                                <div class="form-group">
+                                    <select class="form-control" id="exampleFormControlSelect1">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                        <option>6</option>
+                                        <option>7</option>
+                                        <option>8</option>
+                                        <option>9</option>
+                                        <option>10</option>
+                                    </select>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-7">
+                            {{ pizzas.2.price ~ ' €' }}
+                        </div>
+                        <div class="col-5 justify-content-center">
+                            <a href="" class="c-orange">
+                                <div class="row">
+                                    <i class="fas fa-trash-alt pt-1"></i>
+                                    <p class="pl-1 mb-0">
+                                        Supprimer
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
-        {% endfor %}
+                {#{% endfor %}#}
+
+                <div class="col-12 bg-white pt-2 pb-2 ">
+                    <div class="row align-self-center">
+                        <div class="col-6">
+                            <p class="m-0">
+                                Total :
+                            </p>
+                        </div>
+                        <div class="col-6 text-right">
+                            {{ pizzas.1.price ~ ' €' }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
 
     </div>
-</div>
+    </div>
+    </div>
 
 {% endblock %}
+

@@ -10,6 +10,7 @@ namespace AppBundle\Controller;
 
 
 use AppBundle\Entity\Pizza;
+use AppBundle\Entity\Snack;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -20,12 +21,17 @@ class ProductsController extends Controller
      */
     public function ReadProductAction()
     {
-        $repository = $this->getDoctrine()->getRepository(Pizza::class);
-        $pizzas = $repository->findAll();
+        $repositoryPizzas = $this->getDoctrine()->getRepository(Pizza::class);
+        $pizzas = $repositoryPizzas->findAll();
+
+        $repositorySnacks = $this->getDoctrine()->getRepository(Snack::class);
+        $snacks = $repositorySnacks->findAll();
+
 
         return $this->render('@App/User/readProduct.html.twig',
             [
-                'pizzas' => $pizzas
+                'pizzas' => $pizzas,
+                'snacks' => $snacks
             ]
         );
     }

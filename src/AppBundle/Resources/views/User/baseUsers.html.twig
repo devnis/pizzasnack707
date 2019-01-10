@@ -30,7 +30,7 @@
     <meta name="theme-color" content="#ffffff">
 </head>
 <body>
-<header>
+<header class="header--sticky">
     {#todo Faire les liens a#}
     {#todo Police et color hoover#}
     {#todo Modif p m des liens#}
@@ -38,13 +38,13 @@
         <a class="navbar-brand" href="#">
             <img src="{{ asset('img/logo.png') }}" alt="logo de Pizza 707">
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler c-orange custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse txt-org justify-content-lg-end" id="navbarNav">
             <ul class="navbar-nav justify-content-lg-between">
                 <li class="nav-item">
-                    <a class="nav-link r-lg-5 ml-lg-5 pr-lg-5 pl-lg-5" href="#">Accueil</a>
+                    <a class="nav-link mr-lg-5 ml-lg-5 pr-lg-5 pl-lg-5" href="#">Accueil</a>
                 </li>
                 <li class="nav-item mr-lg-5 ml-lg-5 pr-lg-5 pl-lg-5">
                     <a class="nav-link" href="#">A manger</a>
@@ -56,16 +56,12 @@
         </div>
     </nav>
 </header>
-
-<aside>
-    {% block aside %}
-
-    {% endblock %}
-</aside>
 <section>
+
     {% block content %}
 
     {% endblock %}
+
 </section>
 
 <footer>
@@ -78,7 +74,7 @@
                     <div class="col-1 pt-1">
                         <i class="fas fa-map-marker-alt fa-2x"></i>
                     </div>
-                    <div class="col-11">
+                    <div class="offset-1 col-10">
                         <p>
                             22 rue Louis Lépine <br>
                             Zone Commerciale Royan2 <br>
@@ -88,7 +84,7 @@
                     <div class="col-1 pt-1">
                         <i class="fas fa-mobile-alt fa-2x"></i>
                     </div>
-                    <div class="col-11">
+                    <div class=" offset-1 col-10">
                         <h2>
                             07 83 66 46 69
                         </h2>
@@ -96,18 +92,25 @@
                 </div>
             </div>
             <div class="col-4 pb-2 pt-2">
-                <h3>
-                    Horraire d'hiver
-                </h3>
-                <p>
-                    Lundi: 19h00-22h00 <br>
-                    Mardi: 12h00-14h00, 19h00-22h00 <br>
-                    Mercredi: 12h00-14h00, 19h00-22h00 <br>
-                    Jeudi: 12h00-14h00, 19h00-22h30 <br>
-                    Vendredi: 12h00-14h00, 19h00-23h00 <br>
-                    Samedi: 12h00-14h00, 19h00-23h00 <br>
-                    Dimanche: <span class="f-bold">FERME</span>
-                </p>
+                <div class="row">
+                    <div class="col-1 pt-1">
+                        <i class="far fa-clock fa-2x"></i>
+                    </div>
+                    <div class="offset-1 col-10">
+                        <h3>
+                            Horraire d'hiver
+                        </h3>
+                        <p>
+                            Lundi: 19h00-22h00 <br>
+                            Mardi: 12h00-14h00, 19h00-22h00 <br>
+                            Mercredi: 12h00-14h00, 19h00-22h00 <br>
+                            Jeudi: 12h00-14h00, 19h00-22h30 <br>
+                            Vendredi: 12h00-14h00, 19h00-23h00 <br>
+                            Samedi: 12h00-14h00, 19h00-23h00 <br>
+                            Dimanche: <span class="f-bold">FERME</span>
+                        </p>
+                    </div>
+                </div>
             </div>
             <div class="col-4">
 

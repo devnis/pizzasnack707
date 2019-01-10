@@ -1,6 +1,9 @@
 .bg-black {
   background-color: #141414; }
 
+.bg-white {
+  background-color: white; }
+
 .header--sticky {
   position: sticky;
   top: 0;
@@ -14,5 +17,21 @@
 
 .f-bold {
   font-weight: bold; }
+
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(209,149,105)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E"); }
+
+.ul-style {
+  list-style-type: none; }
+
+.aside--sticky {
+  position: fixed;
+  top: 116px; }
+
+.aside--hg {
+  height: calc(100vh - 115px); }
+
+.cart--br {
+  border: white 1px solid; }
 
 /*# sourceMappingURL=style.css.map */
