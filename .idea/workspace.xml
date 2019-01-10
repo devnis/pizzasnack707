@@ -2,19 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fdfddf0d-776e-48c9-9e01-0b6f0a9af584" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/AppBundle/Controller/HomePageController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/css/style_homepage.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/bigBunns.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/camion1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/sass/style_homepage.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AppBundle/Controller/AProposController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/ProduitsController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Resources/views/User/asideBar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/views/User/homePage.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AppBundle/Resources/views/User/baseUsers.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/views/User/baseUsers.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Resources/views/User/readProduct.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/views/User/readProduct.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Resources/views/User/homePage.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/views/User/homePage.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/css/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/style.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/style_homepage.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/web/sass/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web/sass/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/sass/style_homepage.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/views/User/aPropos.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,24 +23,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/User/homePage.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="843">
-              <caret line="117" column="30" selection-start-line="117" selection-start-column="30" selection-end-line="117" selection-end-column="30" />
+            <state relative-caret-position="120">
+              <caret line="8" column="33" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
               <folding>
                 <element signature="e#12#41#0#Twig" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#div#1;n#section#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#iframe#0;n#div#1;n#article#0;n#section#3;n#!!top" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/css/style_homepage.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="45" selection-start-line="2" selection-start-column="45" selection-end-line="2" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -52,8 +39,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/sass/style.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="750">
-              <caret line="50" column="11" selection-start-line="50" selection-start-column="11" selection-end-line="50" selection-end-column="11" />
+            <state relative-caret-position="810">
+              <caret line="54" column="11" selection-start-line="54" selection-start-column="11" selection-end-line="54" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -75,14 +62,30 @@
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/User/baseUsers.html.twig">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="945">
-              <caret line="63" column="23" selection-start-line="63" selection-start-column="23" selection-end-line="63" selection-end-column="23" />
+              <caret line="63" column="10" lean-forward="true" selection-start-line="63" selection-start-column="10" selection-end-line="63" selection-end-column="10" />
+              <folding>
+                <element signature="e#3708#3716#0#Twig" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/sass/style_homepage.scss">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/User/aPropos.html.twig">
           <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/AProposController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="23" column="56" selection-start-line="23" selection-start-column="56" selection-end-line="23" selection-end-column="56" />
+              <folding>
+                <element signature="e#129#186#0#PHP" expanded="true" />
+                <element signature="e#415#444#1#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -123,8 +126,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/updateAdmin.html.twig" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Entity/pizza.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/base.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/AdminController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Repository/BaseRepository.php" />
@@ -170,10 +171,12 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/ProductsController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/User/readProduct.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/HomePageController.php" />
-        <option value="$PROJECT_DIR$/web/sass/style.scss" />
         <option value="$PROJECT_DIR$/web/css/style_homepage.css" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/User/baseUsers.html.twig" />
+        <option value="$PROJECT_DIR$/web/sass/style_homepage.scss" />
+        <option value="$PROJECT_DIR$/web/sass/style.scss" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/User/homePage.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/AProposController.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/User/baseUsers.html.twig" />
       </list>
     </option>
   </component>
@@ -330,6 +333,13 @@
               <item name="pizzaSnack707" type="b2602c69:ProjectViewProjectNode" />
               <item name="pizzaSnack707" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
+              <item name="accueil" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pizzaSnack707" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pizzaSnack707" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
               <item name="sass" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -348,14 +358,14 @@
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.ChangelistConflict" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/AppBundle/Resources/views/adminPizza" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web/img/accueil" />
       <recent name="$PROJECT_DIR$/web/img/favicon" />
       <recent name="$PROJECT_DIR$/src/AppBundle/Resources/views/admin" />
       <recent name="$PROJECT_DIR$/src/AppBundle/Resources/views/adminSnack" />
       <recent name="$PROJECT_DIR$/src/AppBundle/Resources/views" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/AppBundle/Resources/views/adminPizza" />
     </key>
   </component>
@@ -389,7 +399,7 @@
       <workItem from="1544619077064" duration="3299000" />
       <workItem from="1546510379388" duration="5190000" />
       <workItem from="1546527368515" duration="156000" />
-      <workItem from="1546596090408" duration="28149000" />
+      <workItem from="1546596090408" duration="32060000" />
     </task>
     <task id="LOCAL-00001" summary="Doctrine On">
       <created>1543590581612</created>
@@ -566,11 +576,18 @@
       <option name="project" value="LOCAL" />
       <updated>1547116031644</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Create page Accueil">
+      <created>1547131936879</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1547131936879</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87407000" />
+    <option name="totallyTimeSpent" value="91318000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-293" y="-1080" width="1920" height="1080" extended-state="0" />
@@ -684,29 +701,10 @@
     <MESSAGE value="Update Nav bar" />
     <MESSAGE value="Footer update" />
     <MESSAGE value="Page A manger update" />
-    <option name="LAST_COMMIT_MESSAGE" value="Page A manger update" />
+    <MESSAGE value="Create page Accueil" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create page Accueil" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/admin/adminSnack/create.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-column="40" />
-          <folding>
-            <element signature="e#12#36#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/admin/adminSnack/read.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="31" column="17" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
-          <folding>
-            <element signature="e#12#36#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/AdminSnackController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -977,16 +975,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ProductsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="36" selection-end-column="5" />
-          <folding>
-            <element signature="e#127#154#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/config/config.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1005">
@@ -1032,6 +1020,48 @@
     <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/sass/style_homepage.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/css/style_homepage.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="11" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/sass/style.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="810">
+          <caret line="54" column="11" selection-start-line="54" selection-start-column="11" selection-end-line="54" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ProductsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="36" selection-end-column="5" />
+          <folding>
+            <element signature="e#127#154#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/User/homePage.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="33" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
+          <folding>
+            <element signature="e#12#41#0#Twig" expanded="true" />
+            <element signature="n#style#0;n#iframe#0;n#div#1;n#article#0;n#section#3;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/HomePageController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -1043,40 +1073,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/sass/style.scss">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/AProposController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="750">
-          <caret line="50" column="11" selection-start-line="50" selection-start-column="11" selection-end-line="50" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/sass/style_homepage.scss">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/style_homepage.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="45" selection-start-line="2" selection-start-column="45" selection-end-line="2" selection-end-column="45" />
+        <state relative-caret-position="270">
+          <caret line="23" column="56" selection-start-line="23" selection-start-column="56" selection-end-line="23" selection-end-column="56" />
+          <folding>
+            <element signature="e#129#186#0#PHP" expanded="true" />
+            <element signature="e#415#444#1#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/User/baseUsers.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="945">
-          <caret line="63" column="23" selection-start-line="63" selection-start-column="23" selection-end-line="63" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/User/homePage.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="843">
-          <caret line="117" column="30" selection-start-line="117" selection-start-column="30" selection-end-line="117" selection-end-column="30" />
+          <caret line="63" column="10" lean-forward="true" selection-start-line="63" selection-start-column="10" selection-end-line="63" selection-end-column="10" />
           <folding>
-            <element signature="e#12#41#0#Twig" expanded="true" />
-            <element signature="n#style#0;n#iframe#0;n#div#1;n#section#1;n#!!top" expanded="true" />
+            <element signature="e#3708#3716#0#Twig" expanded="true" />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/User/aPropos.html.twig">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
   <component name="masterDetails">

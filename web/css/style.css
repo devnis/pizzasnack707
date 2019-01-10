@@ -37,4 +37,15 @@
 .carousel-w {
   width: 720px; }
 
+.parallax {
+  /* The image used */
+  background-image: url("../img/camion1.jpg");
+  /* Set a specific height */
+  height: 500px;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
 /*# sourceMappingURL=style.css.map */
