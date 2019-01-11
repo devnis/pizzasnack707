@@ -26,7 +26,7 @@ class AdminSnackController extends Controller
         $repository = $this->getDoctrine()->getRepository(Snack::class);
         $snacks = $repository->findAll();
 
-        return $this->render('@App/adminSnack/read.html.twig',
+        return $this->render('@App/admin/adminSnack/read.html.twig',
             [
                 'snacks' => $snacks
             ]
@@ -53,7 +53,7 @@ class AdminSnackController extends Controller
 
             return $this->redirectToRoute('admin_snack');
         } else {
-            return $this->render('@App/adminSnack/update.html.twig',
+            return $this->render('@App/admin/adminSnack/update.html.twig',
                 [
                     'pizza' => $pizza,
                     'form' => $form->createView()
@@ -79,7 +79,7 @@ class AdminSnackController extends Controller
 
             return $this->redirectToRoute('admin_snack');
         } else{
-            return $this->render('@App/adminSnack/create.html.twig',
+            return $this->render('@App/admin/adminSnack/create.html.twig',
                 [
                     'form' => $form->createView()
                 ]
