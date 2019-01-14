@@ -57,45 +57,23 @@
 
                     {#todo mettre en forme les éléments#}
 
-                    {% for pizza in pizzas %}
+                    {% for produit in produits %}
 
                         <div class="col-6 p-1">
                             <div class="text-center">
-                                <img src="{{ asset('img/pizzaOignonsjpg') }}" alt="pizza" class="img-fluid">
+                                <img src="{{ asset('img/pizzaOignons.jpg') }}" alt="pizza" class="img-fluid">
                             </div>
                             <div>
-                                {{ pizza.name }}
+                                {{ produit.name }}
                             </div>
                             <div>
-                                {{ pizza.price ~ ' €' }}
+                                {{ produit.price ~ ' €' }}
                             </div>
                             <div class="p-1">
-                                {{ pizza.ingredients }}
+                                {{ produit.ingredients }}
                             </div>
                             <div>
-                                <input type="submit" class="btn btn-outline-success" value="Commander">
-                            </div>
-                        </div>
-
-                    {% endfor %}
-
-                    {% for snack in snacks %}
-
-                        <div class="col-6 p-1 text-center">
-                            <div>
-                                {{ snack.name }}
-                            </div>
-                            <div>
-                                {#<img src="{{ asset('') }}" alt="snack" class="img-fluid">#}
-                            </div>
-                            <div class="pt-1 pb-1">
-                                {{ snack.ingredients }}
-                            </div>
-                            <div>
-                                {{ snack.price ~ ' €' }}
-                            </div>
-                            <div>
-                                <input type="submit" class="btn btn-outline-success" value="Commander">
+                                <a class="btn btn-outline-success" href="{{ path('panier_ajouter', {'id' : produit.id}) }}">Ajouter au panier</a>
                             </div>
                         </div>
 
@@ -109,10 +87,10 @@
                 <div class="col-12 cart--br pt-2 pb-2">
                     <div class="row">
                         <div class="col-7">
-                            {{ pizzas.1.name }}
+                            {{ produits.1.name }}
                         </div>
                         <div class="col-5">
-                            <form action="">
+                            <form action="" method="get">
                                 <div class="form-group">
                                     <select class="form-control" id="exampleFormControlSelect1">
                                         <option>1</option>
@@ -130,7 +108,7 @@
                             </form>
                         </div>
                         <div class="col-7">
-                            {{ pizzas.1.price ~ ' €' }}
+                            {{ produits.1.price ~ ' €' }}
                         </div>
                         <div class="col-5 justify-content-center">
                             <a href="" class="c-orange">
@@ -147,7 +125,7 @@
                 <div class="col-12 cart--br pt-2 pb-2">
                     <div class="row">
                         <div class="col-7">
-                            {{ pizzas.2.name }}
+                            {{ produits.2.name }}
                         </div>
                         <div class="col-5">
                             <form action="">
@@ -168,7 +146,7 @@
                             </form>
                         </div>
                         <div class="col-7">
-                            {{ pizzas.2.price ~ ' €' }}
+                            {{ produits.2.price ~ ' €' }}
                         </div>
                         <div class="col-5 justify-content-center">
                             <a href="" class="c-orange">
@@ -193,7 +171,7 @@
                             </p>
                         </div>
                         <div class="col-6 text-right">
-                            {{ pizzas.1.price ~ ' €' }}
+                            {{ produits.1.price ~ ' €' }}
                         </div>
                     </div>
                 </div>

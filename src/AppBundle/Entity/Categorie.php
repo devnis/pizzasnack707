@@ -5,12 +5,12 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * catSnack
+ * base
  *
- * @ORM\Table(name="cat_snack")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\CatSnackRepository")
+ * @ORM\Table(name="Categorie")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\BaseRepository")
  */
-class CatSnack
+class Categorie
 {
     /**
      * @var int
@@ -30,9 +30,10 @@ class CatSnack
 
     /**
      * @var string
-     * @ORM\OneToMany(targetEntity="Snack", mappedBy="catSnack")
+     * @ORM\OneToMany(targetEntity="Produits", mappedBy="categorie")
      */
-    private $snack;
+    private $produits;
+
 
     /**
      * Get id
@@ -49,7 +50,7 @@ class CatSnack
      *
      * @param string $type
      *
-     * @return catSnack
+     * @return Categorie
      */
     public function setType($type)
     {
@@ -71,34 +72,17 @@ class CatSnack
     /**
      * @return string
      */
-    public function getPizza()
+    public function getProduits()
     {
-        return $this->pizza;
+        return $this->produits;
     }
 
     /**
-     * @param string $pizza
+     * @param string $produits
      */
-    public function setPizza($pizza)
+    public function setProduits($produits)
     {
-        $this->pizza = $pizza;
+        $this->produits = $produits;
     }
-
-    /**
-     * @return string
-     */
-    public function getSnack()
-    {
-        return $this->snack;
-    }
-
-    /**
-     * @param string $snack
-     */
-    public function setSnack($snack)
-    {
-        $this->snack = $snack;
-    }
-
 }
 

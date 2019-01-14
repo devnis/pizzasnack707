@@ -7,10 +7,10 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * pizza
  *
- * @ORM\Table(name="Pizza")
+ * @ORM\Table(name="Produits")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\PizzaRepository")
  */
-class Pizza
+class Produits
 {
     /**
      * @var int
@@ -24,7 +24,7 @@ class Pizza
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=20)
+     * @ORM\Column(name="name", type="string", length=25)
      */
     private $name;
 
@@ -45,14 +45,14 @@ class Pizza
     /**
      * @var string
      *
-     * @ORM\Column(name="ingredients", type="string", length=80)
+     * @ORM\Column(name="ingredients", type="string", length=100)
      */
     private $ingredients;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Base", inversedBy="pizza")
+     * @ORM\ManyToOne(targetEntity="Categorie", inversedBy="produits")
      */
-    private $base;
+    private $categorie;
 
 
 
@@ -71,7 +71,7 @@ class Pizza
      *
      * @param string $name
      *
-     * @return pizza
+     * @return Produits
      */
     public function setName($name)
     {
@@ -95,7 +95,7 @@ class Pizza
      *
      * @param integer $price
      *
-     * @return pizza
+     * @return Produits
      */
     public function setPrice($price)
     {
@@ -119,7 +119,7 @@ class Pizza
      *
      * @param string $img
      *
-     * @return pizza
+     * @return Produits
      */
     public function setImg($img)
     {
@@ -157,17 +157,17 @@ class Pizza
     /**
      * @return mixed
      */
-    public function getBase()
+    public function getCategorie()
     {
-        return $this->base;
+        return $this->categorie;
     }
 
     /**
-     * @param mixed $base
+     * @param mixed $categorie
      */
-    public function setBase($base)
+    public function setCategorie($categorie)
     {
-        $this->base = $base;
+        $this->categorie = $categorie;
     }
 }
 

@@ -30,16 +30,10 @@ class Commande
     private $date;
 
     /**
-     * @ORM\Column(name="pizza", type="integer", nullable=true)
-     * @ORM\ManyToMany(targetEntity="Pizza")
+     * @ORM\Column(name="produits", type="integer", nullable=true)
+     * @ORM\ManyToMany(targetEntity="Produits")
      */
-    private $pizza;
-
-    /**
-     * @ORM\Column(name="snack", type="integer", nullable=true)
-     * @ORM\ManyToMany(targetEntity="Snack")
-     */
-    private $snack;
+    private $produits;
 
     /**
      * @ORM\ManyToOne(targetEntity="VerifTranche", inversedBy="commande")
@@ -84,38 +78,6 @@ class Commande
     /**
      * @return mixed
      */
-    public function getPizza()
-    {
-        return $this->pizza;
-    }
-
-    /**
-     * @param mixed $pizza
-     */
-    public function setPizza($pizza)
-    {
-        $this->pizza = $pizza;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getSnack()
-    {
-        return $this->snack;
-    }
-
-    /**
-     * @param mixed $snack
-     */
-    public function setSnack($snack)
-    {
-        $this->snack = $snack;
-    }
-
-    /**
-     * @return mixed
-     */
     public function getVerifTranche()
     {
         return $this->verifTranche;
@@ -129,20 +91,21 @@ class Commande
         $this->verifTranche = $verifTranche;
     }
 
-//    /**
-//     * @return mixed
-//     */
-//    public function getTranche()
-//    {
-//        return $this->tranche;
-//    }
-//
-//    /**
-//     * @param mixed $tranche
-//     */
-//    public function setTranche($tranche)
-//    {
-//        $this->tranche = $tranche;
-//    }
+    /**
+     * @return mixed
+     */
+    public function getProduits()
+    {
+        return $this->produits;
+    }
+
+    /**
+     * @param mixed $produits
+     */
+    public function setProduits($produits)
+    {
+        $this->produits = $produits;
+    }
+
 }
 

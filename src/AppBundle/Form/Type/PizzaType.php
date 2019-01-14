@@ -19,7 +19,7 @@ class PizzaType extends AbstractType
         $builder->add('name', TextType::class, ['label' => 'Nom'])
             ->add('base', EntityType::class,
                 [
-                    'class' => 'AppBundle:Base',
+                    'class' => 'Categorie.php',
                     'choice_label' => 'type'
                 ]
             )
@@ -35,7 +35,7 @@ class PizzaType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\Pizza'
+            'data_class' => 'AppBundle\Entity\Produits'
         ));
     }
 

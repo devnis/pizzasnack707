@@ -9,21 +9,21 @@
 namespace AppBundle\Controller;
 
 
-use AppBundle\Entity\Pizza;
+use AppBundle\Entity\Produits;
 use AppBundle\Form\Type\PizzaType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class AdminPizzaController extends Controller
+class AdminProduitsController extends Controller
 {
     /**
      * @Route("/admin/pizza", name="admin_pizza")
      */
     public function PizzaAction()
     {
-        $repository = $this->getDoctrine()->getRepository(Pizza::class);
+        $repository = $this->getDoctrine()->getRepository(Produits::class);
         $pizzas = $repository->findAll();
 
         return $this->render('@App/admin/adminPizza/read.html.twig',
@@ -38,7 +38,7 @@ class AdminPizzaController extends Controller
      */
     public function UpdateAction(Request $request, $id)
     {
-        $repository = $this->getDoctrine()->getRepository(Pizza::class);
+        $repository = $this->getDoctrine()->getRepository(Produits::class);
         $pizza = $repository->find($id);
 
         $form = $this->createForm(PizzaType::class, $pizza);
@@ -67,7 +67,7 @@ class AdminPizzaController extends Controller
      */
     public function CreateAction(Request $request)
     {
-        $form = $this->createForm(PizzaType::class, new Pizza());
+        $form = $this->createForm(PizzaType::class, new Produits());
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()){
@@ -92,7 +92,7 @@ class AdminPizzaController extends Controller
      */
     public function DeleteAction($id)
     {
-        $repository = $this->getDoctrine()->getRepository(Pizza::class);
+        $repository = $this->getDoctrine()->getRepository(Produits::class);
 
         $entityManager = $this->getDoctrine()->getManager();
 
@@ -101,6 +101,6 @@ class AdminPizzaController extends Controller
         $entityManager->remove($pizza);
         $entityManager->flush();
 
-        return new Response("Pizza supprimé");
+        return new Response("Produits supprimé");
     }
 }
