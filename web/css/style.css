@@ -1,3 +1,19 @@
+@font-face {
+  font-family: 'Molot';
+  src: url("../font/Molot/Molot.otf"); }
+h1, h2, h3 {
+  font-family: 'Domine', serif; }
+
+p, a, li {
+  font-family: 'Roboto', sans-serif; }
+
+.f-molot {
+  font-family: 'Molot', sans-serif; }
+
+.f-bold {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold; }
+
 .bg-black {
   background-color: #141414; }
 
@@ -15,9 +31,6 @@
 .c-orange {
   color: #d19569; }
 
-.f-bold {
-  font-weight: bold; }
-
 .custom-toggler .navbar-toggler-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(209,149,105)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E"); }
 
@@ -26,7 +39,7 @@
 
 .aside--sticky {
   position: fixed;
-  top: 116px; }
+  top: 102px; }
 
 .aside--hg {
   height: calc(100vh - 115px); }
@@ -47,5 +60,19 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover; }
+
+.c-blue {
+  color: #4267B2; }
+
+.b-orange {
+  color: #141414;
+  background-color: #d19569; }
+
+.h-ing {
+  height: 80px; }
+
+.a-orange:link, .a-orange:visited {
+  color: #d19569;
+  text-decoration: none; }
 
 /*# sourceMappingURL=style.css.map */

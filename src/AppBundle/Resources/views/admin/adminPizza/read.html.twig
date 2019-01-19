@@ -3,7 +3,7 @@
 {% block content %}
 
     <h2 class="text-light text-left mt-5">Liste des pizzas</h2>
-    <a href="{{ path('admin_pizza_create') }}">
+    <a href="{{ path('admin_produit_create') }}">
         <button type="button" class="btn btn-success">
             Créer une pizza
         </button>
@@ -22,23 +22,23 @@
     </tr>
     </thead>
     <tbody>
-    {% for pizza in pizzas %}
+    {% for produit in produits %}
         <tr class="bg-light">
             <td>
                 {#<a href="{{ path('page_auteur', {'id':auteur.id}) }}">#}
                 <p>
-                    {{ pizza.name }}
+                    {{ produit.name }}
                 </p>
                 {#</a>#}
             </td>
             <td class="text-center">
-                {{ pizza.base.type }}
+                {{ produit.categorie.type }}
             </td>
             <td class="text-center">
-                {{ pizza.ingredients }}
+                {{ produit.ingredients }}
             </td>
             <td class="text-center">
-                {{ pizza.price }}
+                {{ produit.price }}
             </td>
             <td class="text-center">
                 {#<a href="{{ path('livre', {'id':livre.id}) }}">#}
@@ -48,7 +48,7 @@
                 {#</a>#}
             </td>
             <td class="text-center">
-                <a href="{{ path('admin_pizza_update', {'id':pizza.id}) }}">
+                <a href="{{ path('admin_produit_update', {'id':produit.id}) }}">
                     <button type="button" class="btn btn-warning">
                         Modifier
                     </button>
@@ -56,7 +56,7 @@
             </td>
             <td>
                 <div class="text-center">
-                    <a href="{{ path('admin_pizza_delete', { 'id':pizza.id }) }}">
+                    <a href="{{ path('admin_produit_delete', { 'id':produit.id }) }}">
                     <input type="hidden" name="deleteAuthor" value="DELETE" />
                     <button type="submit" class="btn btn-danger">Suppr</button>
                     </a>

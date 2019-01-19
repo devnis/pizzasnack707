@@ -6,8 +6,8 @@
 
         {#carousel#}
         <div class="bg-black">
-            <div class="container">
-                <div class="col-8 offset-2">
+            <div class="container-fluid p-0">
+                <div class="col-12 col-lg-10 offset-lg-1 p-0">
                     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                         <ol class="carousel-indicators">
                             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -52,10 +52,9 @@
     </section>
 
     <section>
-        <div class="bg-black c-orange">
-            <div class="container-fluid">
+            <div class="container-fluid bg-black c-orange">
                 <div class="row">
-                    <div class="col-6 p-3">
+                    <div class="col-12 col-md-6 pt-1 pb-1 pt-md-3 pb-md-3">
                         <h3>
                             Petite description
                         </h3>
@@ -65,22 +64,21 @@
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad doloribus, ea facere fuga natus provident quam saepe ullam unde velit? Esse, ipsam nesciunt omnis praesentium quas quisquam repellat totam voluptatum.
                         </p>
                     </div>
-                    <div class="col-6 p-3">
+                    <div class="col-12 col-md-6 pt-1 pb-1 pt-md-3 pb-md-3">
                         <div class="row">
                             <div class="col-12">
                                 <img src="{{ asset('img/accueil/bigbunnsFrites.jpg') }}" alt="Photo d'un bon Big bunn's" class="img-fluid">
                             </div>
-                            <div class="col-6 pt-3">
+                            <div class="col-lg-6 d-none d-md-block pt-3">
                                 <img src="{{ asset('img/accueil/pizza.jpg') }}" alt="Photo d'une bonne pizza" class="img-fluid">
                             </div>
-                            <div class="col-6 pt-3">
+                            <div class="col-lg-6 d-none d-md-block pt-3">
                                 <img src="{{ asset('img/accueil/pannini.jpg') }}" alt="Photo d'un bon pannini" class="img-fluid">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
     </section>
     <section>
         <div class="bg-black">
@@ -93,10 +91,9 @@
     </section>
     <section>
         <article>
-            <div class="bg-black c-orange">
-                <div class="container-fluid bg-black">
+                <div class="container-fluid bg-black c-orange">
                     <div class="row">
-                        <div class="col-6 pt-2 pb-2">
+                        <div class="col-12 col-md-6 pt-2 pb-2">
                             <div class="row">
                                 <div class="col-12">
                                     <h1>
@@ -130,26 +127,27 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-6 pt-2 pb-2">
+                        <div class="col-12 col-md-6 pt-2 pb-2">
                             <h1>
-                                Où venir manger mes pizzas
+                                Localisation
                             </h1>
+                            <div class="embed-responsive embed-responsive-16by9">
                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2789.8979212311237!2d-0.9924079137013936!3d45.63278692177839!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4801754019b00ff5%3A0xd7599e2f02f72b!2s707+Pizzas+artisanales+-+Snack!5e0!3m2!1sfr!2sfr!4v1547124721190"
-                                    width="600" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+                                    width="600" height="300" frameborder="0" style="border:0" allowfullscreen>
+                            </iframe>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
         </article>
         <article>
-            <div class="bg-black c-orange">
-                <div class="container-fluid">
+                <div class="container-fluid bg-black c-orange">
                     <div class="row">
-                        <div class="col-6">
+                        <div class="col-12 col-md-6">
                             <img src="{{ asset('img/accueil/LePlusBeau.jpg') }}" alt="La photo du plus beau Pizzaolo " class="img-fluid">
                         </div>
-                        <div class="col-6 align-self-center">
-                            <div class="">
+                        <div class="col-12 col-md-6 align-self-center">
+                            <div class="pt-2">
                                 <h3>
                                     Je parle de moi
                                 </h3>
@@ -163,10 +161,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
         </article>
     </section>
-
 
 {% endblock %}
 

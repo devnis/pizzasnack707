@@ -1,5 +1,30 @@
 $orange: #d19569;
 $black: #141414;
+$blue: #4267B2;
+
+//FONT
+
+@font-face {
+  font-family: 'Molot';
+  src: url('../font/Molot/Molot.otf');
+}
+
+h1, h2, h3{
+  font-family: 'Domine', serif;
+}
+
+p, a, li{
+  font-family: 'Roboto', sans-serif;
+}
+
+.f-molot{
+  font-family: 'Molot', sans-serif;
+}
+
+.f-bold {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+}
 
 .bg-black {
   background-color: $black;
@@ -23,10 +48,6 @@ $black: #141414;
   color: $orange;
 }
 
-.f-bold {
-  font-weight: bold;
-}
-
 .custom-toggler .navbar-toggler-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(209,149,105)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
@@ -37,7 +58,7 @@ $black: #141414;
 
 .aside--sticky{
   position: fixed;
-  top: 116px;
+  top: 102px;
 }
 
 .aside--hg{
@@ -64,4 +85,22 @@ $black: #141414;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.c-blue{
+  color: $blue;
+}
+
+.b-orange{
+  color: #141414;
+  background-color: #d19569;
+}
+
+.h-ing{
+  height: 80px;
+}
+
+.a-orange:link, .a-orange:visited {
+  color: $orange;
+  text-decoration: none;
 }

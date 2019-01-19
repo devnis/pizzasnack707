@@ -9,24 +9,23 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class SnackType extends AbstractType
+class ProduitsType extends AbstractType
 {
     /**
      * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('catSnack', EntityType::class,
-            [
-                'class' => 'AppBundle:CatSnack',
-                'choice_label' => 'type'
-            ]
-        )
-            ->add('name', TextType::class, ['label' => 'Nom'])
+        $builder->add('name', TextType::class, ['label' => 'Nom'])
+            ->add('categorie', EntityType::class,
+                [
+                    'class' => 'Categorie.php',
+                    'choice_label' => 'type'
+                ]
+            )
             ->add('ingredients', TextType::class, ['label' => 'Ingredient'])
             ->add('price', TextType::class, ['label' => 'Prix'])
-//            ->add('img', FileType::class, ['label' => 'Image'])
-            ->add('submit', SubmitType::class, ['label' => 'Enregistrer la pizza']);
+            ->add('submit', SubmitType::class, ['label' => 'Enregistrer le produit']);
     }
 
     /**
@@ -35,7 +34,7 @@ class SnackType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\Snack'
+            'data_class' => 'AppBundle\Entity\Produits'
         ));
     }
 
@@ -44,6 +43,6 @@ class SnackType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'appbundle_Snack';
+        return 'appbundle_Produits';
     }
 }
