@@ -15,7 +15,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class HomePageController extends Controller
 {
     /**
-     * @Route("homepage", name="home_page")
+     * @Route("/", name="home_page")
      */
     public function HomePageAction()
     {

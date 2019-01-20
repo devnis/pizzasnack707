@@ -2,8 +2,65 @@
 
 {% block content %}
 
-    {{ form_start(form) }}
-    {{ form_widget(form) }}
-    {{ form_end(form) }}
+    <div class="offset-3 col-6 c-orange mt-5">
+        <h1 class="h3 mb-3 text-center">
+            Création d'un produit
+        </h1>
+        {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+
+        {# Les erreurs générales du formulaire #}
+        {{ form_errors(form) }}
+
+        {# Génération du label +error + widget pour le champ Nom #}
+        <div class="form-group col-12">
+            <div class="row">
+                <div class="col-3 align-self-center">
+                    {{ form_label(form.name, 'Nom', {'label_attr': {'class': 'm-0'}}) }}
+                </div>
+                {{ form_errors(form.name) }}
+                {{ form_widget(form.name, {'attr': {'class': 'form-control col-9'}}) }}
+            </div>
+        </div>
+
+        {# Génération du label +error + widget pour le champ Categorie #}
+        <div class="form-group col-12">
+            <div class="row">
+                <div class="col-3 align-self-center">
+                    {{ form_label(form.categorie, 'Categorie', {'label_attr': {'class': 'm-0'}}) }}
+                </div>
+                {{ form_errors(form.categorie) }}
+                {{ form_widget(form.categorie, {'attr': {'class': 'custom select col-9'}}) }}
+            </div>
+        </div>
+
+        {# Génération du label +error + widget pour le champ Ingredients #}
+        <div class="form-group col-12">
+            <div class="row">
+                <div class="col-3 align-self-center">
+                    {{ form_label(form.ingredients, 'Ingredients', {'label_attr': {'class': 'm-0'}}) }}
+                </div>
+                {{ form_errors(form.ingredients) }}
+                {{ form_widget(form.ingredients, {'attr': {'class': 'form-control col-9'}}) }}
+            </div>
+        </div>
+
+        {# Génération du label +error + widget pour le champ Prix #}
+        <div class="form-group col-12">
+            <div class="row">
+                <div class="col-3 align-self-center">
+                    {{ form_label(form.price, 'Prix', {'label_attr': {'class': 'm-0'}}) }}
+                </div>
+                {{ form_errors(form.price) }}
+                {{ form_widget(form.price, {'attr': {'class': 'form-control col-9'}}) }}
+            </div>
+        </div>
+        <div class="text-center offset-3 col-9">
+            {# Submit pour envoyer le formulaire #}
+            {{ form_widget(form.submit, {'attr': {'class': 'btn btn-lg btn-block c-orange'}}) }}
+
+            {{ form_end(form) }}
+        </div>
+    </div>
+
 
 {% endblock %}

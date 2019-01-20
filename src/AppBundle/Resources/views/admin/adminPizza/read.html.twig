@@ -2,12 +2,13 @@
 
 {% block content %}
 
-    <h2 class="text-light text-left mt-5">Liste des pizzas</h2>
-    <a href="{{ path('admin_produit_create') }}">
-        <button type="button" class="btn btn-success">
-            Créer une pizza
-        </button>
-    </a>
+    <div class="pt-5">
+        <a href="{{ path('admin_produit_create') }}">
+            <button type="button" class="btn btn-success">
+                Créer un produit
+            </button>
+        </a>
+    </div>
     <table class="table">
     <thead>
     <tr class="thead-dark text-center">
@@ -57,8 +58,8 @@
             <td>
                 <div class="text-center">
                     <a href="{{ path('admin_produit_delete', { 'id':produit.id }) }}">
-                    <input type="hidden" name="deleteAuthor" value="DELETE" />
-                    <button type="submit" class="btn btn-danger">Suppr</button>
+                        <input type="hidden" name="deleteAuthor" value="DELETE" />
+                        <button type="submit" class="btn btn-danger">Suppr</button>
                     </a>
                 </div>
             </td>

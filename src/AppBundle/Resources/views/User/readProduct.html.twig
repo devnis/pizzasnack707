@@ -6,77 +6,67 @@
     <div class="container-fluid">
         <div class="row">
             {#Aside nav #}
-            <div class="col-3 bg-black c-orange p-1 aside--sticky aside--hg d-none d-md-block">
-                <h2 class="text-center">
+            <div class="col-lg-2 c-orange p-1 aside--sticky aside--hg d-none d-lg-block">
+                <h3>
                     Notre carte
-                </h2>
+                </h3>
                 <ul class="ul-style pt-3 pb-3">
                     <li class="pt-3 pb-3">
-                        <a href="" class="a-orange">
+                        <div id="pizza" class="cursor">
                             LES PIZZAS
-                        </a>
+                        </div>
                         <ul class="ul-style">
-                            <li>
-                                <a href="" class="a-orange">
-                                    Base tomate
-                                </a>
+                            <li class="cursor" id="tomate">
+                                Base tomate
                             </li>
-                            <li>
-                                <a href="" class="a-orange">
-                                    Base crème
-                                </a>
+                            <li class="cursor" id="creme">
+                                Base crème
                             </li>
                         </ul>
                     <li class="pt-3 pb-3">
-                        <a href="" class="a-orange">
+                        <div id="snack" class="cursor">
                             SNACK
-                        </a>
+                        </div>
                         <ul class="ul-style">
-                            <li>
-                                <a href="" class="a-orange">
-                                    Big Bunn's
-                                </a>
+                            <li class="cursor" id="bigBunn">
+                                Big Bunn's
                             </li>
-                            <li>
-                                <a href="" class="a-orange">
-                                    Snack
-                                </a>
+                            <li class="cursor" id="snack1">
+                                Snack
                             </li>
-                            <li>
-                                <a href="" class="a-orange">
-                                    Panini
-                                </a>
+                            <li class="cursor" id="panini">
+                                Panini
                             </li>
                         </ul>
                     </li>
                 </ul>
             </div>
 
-            <div class="offset-lg-3 col-12 col-md-9">
+            <div class="offset-lg-2 col-lg-8 col-12 col-md-9 bg-white">
                 <div class="row">
 
                     {#todo mettre en forme les éléments#}
 
                     {% for produit in produits %}
 
-                        <div class="col-12 col-md-6 col-lg-4 pt-1 pb-1">
+                        <div class="col-12 col-md-6 col-lg-4 pt-2 pb-2 {{ produit.categorie.type }}">
                             <div class="row">
                                 <div class="text-center col-12">
                                     <img src="{{ asset('img/pizzaOignons.jpg') }}" alt="pizza" class="img-fluid">
                                 </div>
-                                <div class="col-8">
-                                    <h3 class="f-molot">
-                                    {{ produit.name }}
-                                    </h3>
+                                <div class="col-7">
+                                    <p class="f-molot">
+                                        {{ produit.name }}
+                                    </p>
                                 </div>
-                                <div class="col-4 text-right">
-                                    <h3 class="f-bold">
-                                    {{ produit.price ~ ' €' }}
-                                    </h3>
+                                <div class="col-5 text-right">
+                                    <p class="f-s-roboto">
+                                        {{ produit.price ~ ' €' }}
+                                    </p>
                                 </div>
                                 <div class="pt-1 pb-1 col-12 h-ing">
                                     <p>
-                                    {{ produit.ingredients }}
+                                        {{ produit.ingredients }}
                                     </p>
                                 </div>
                                 <div class="offset-1 col-10 text-center">
@@ -90,13 +80,15 @@
 
                 </div>
             </div>
-            <div class="offset-9 col-3 bg-black c-orange aside--sticky aside--hg d-none d-md-block">
+            <div class="offset-md-9 col-md-3 offset-lg-10 col-lg-2 c-orange aside--sticky aside--hg d-none d-md-block">
 
                 {#{% for article in %}#}
                 <div class="col-12 cart--br pt-2 pb-2">
                     <div class="row">
                         <div class="col-7">
-                            {{ produits.1.name }}
+                            <h6 class="f-molot f-molot-small">
+                                {{ produits.7.name }}
+                            </h6>
                         </div>
                         <div class="col-5">
                             <form action="" method="get">
@@ -117,14 +109,14 @@
                             </form>
                         </div>
                         <div class="col-7">
-                            {{ produits.1.price ~ ' €' }}
+                            {{ produits.7.price ~ ' €' }}
                         </div>
                         <div class="col-5 justify-content-center">
                             <a href="" class="c-orange">
                                 <div class="row">
                                     <i class="fas fa-trash-alt pt-1"></i>
                                     <p class="pl-1 mb-0">
-                                        Supprimer
+                                        Retirer
                                     </p>
                                 </div>
                             </a>
@@ -134,7 +126,9 @@
                 <div class="col-12 cart--br pt-2 pb-2">
                     <div class="row">
                         <div class="col-7">
-                            {{ produits.2.name }}
+                            <p class="f-molot f-molot-small">
+                                {{ produits.2.name }}
+                            </p>
                         </div>
                         <div class="col-5">
                             <form action="">
@@ -162,7 +156,7 @@
                                 <div class="row">
                                     <i class="fas fa-trash-alt pt-1"></i>
                                     <p class="pl-1 mb-0">
-                                        Supprimer
+                                        Retirer
                                     </p>
                                 </div>
                             </a>

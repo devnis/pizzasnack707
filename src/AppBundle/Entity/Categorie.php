@@ -7,8 +7,8 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * base
  *
- * @ORM\Table(name="Categorie")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\BaseRepository")
+ * @ORM\Table(name="categorie")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\CategorieRepository")
  */
 class Categorie
 {
@@ -50,7 +50,7 @@ class Categorie
      *
      * @param string $type
      *
-     * @return Categorie
+     * @return categorie
      */
     public function setType($type)
     {

@@ -12,6 +12,7 @@ namespace AppBundle\Controller;
 use AppBundle\Entity\Produits;
 use AppBundle\Form\Type\PizzaType;
 use AppBundle\Form\Type\ProduitsType;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -20,7 +21,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class AdminProduitsController extends Controller
 {
     /**
-     * @Route("/admin/produit", name="admin_produit")
+     * @Route("/admin/homePage", name="admin_produit")
      */
     public function PizzaAction()
     {
@@ -45,7 +46,8 @@ class AdminProduitsController extends Controller
         $form = $this->createForm(ProduitsType::class, $produit);
         $form->handleRequest($request);
 
-        if ($form->isValid() && $form->isSubmitted()){
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->addFlash("notice", "le produit est bien enregistré");
             $produit = $form->getData();
 
             $entityManager = $this->getDoctrine()->getManager();
@@ -54,13 +56,14 @@ class AdminProduitsController extends Controller
 
             return $this->redirectToRoute('admin_produit');
         } else {
-            return $this->render('@App/admin/adminPizza/update.html.twig',
-                [
-                    'produit' => $produit,
-                    'form' => $form->createView()
-                ]
-            );
+            $this->addFlash("notice", "Le produit n'est pas enregistré");
         }
+        return $this->render('@App/admin/adminPizza/update.html.twig',
+            [
+                'produit' => $produit,
+                'form' => $form->createView()
+            ]
+        );
     }
 
     /**
@@ -72,6 +75,7 @@ class AdminProduitsController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()){
+            $this->addFlash("notice", "Le produit est bien enregistré");
             $produit = $form->getData();
 
             $entityManager = $this->getDoctrine()->getManager();
@@ -80,12 +84,13 @@ class AdminProduitsController extends Controller
 
             return $this->redirectToRoute('admin_produit');
         } else{
-            return $this->render('@App/admin/adminPizza/create.html.twig',
-                [
-                    'form' => $form->createView()
-                ]
-            );
+            $this->addFlash("notice", "Le produit n'est pas enregistré");
         }
+        return $this->render('@App/admin/adminPizza/create.html.twig',
+            [
+                'form' => $form->createView()
+            ]
+        );
     }
 
     /**
@@ -93,6 +98,8 @@ class AdminProduitsController extends Controller
      */
     public function DeleteAction($id)
     {
+        $this->addFlash("notice", "le produit est supprimé");
+
         $repository = $this->getDoctrine()->getRepository(Produits::class);
 
         $entityManager = $this->getDoctrine()->getManager();
@@ -102,6 +109,6 @@ class AdminProduitsController extends Controller
         $entityManager->remove($produit);
         $entityManager->flush();
 
-        return new Response("Produits supprimé");
+        return $this->RedirectToRoute("admin_produit");
     }
 }

@@ -19,14 +19,31 @@ p, a, li{
 
 .f-molot{
   font-family: 'Molot', sans-serif;
+  font-size: 1.25em;
+}
+
+.f-molot-small{
+  font-size: 1em;
 }
 
 .f-bold {
-  font-family: 'Roboto', sans-serif;
   font-weight: bold;
 }
 
-.bg-black {
+.f-s-roboto{
+  font-family: Roboto, sans-serif;
+  font-size: 1.25em;
+  font-weight: bold;
+}
+
+body{
+  background-color: $black;
+}
+.bg-white {
+  background-color: white;
+}
+
+.bg-black{
   background-color: $black;
 }
 
@@ -37,7 +54,7 @@ p, a, li{
 .header--sticky {
   position: sticky;
   top: 0;
-  z-index: 5;
+  z-index: 100;
 }
 
 .navbar-custom .navbar-nav .nav-link {
@@ -103,4 +120,8 @@ p, a, li{
 .a-orange:link, .a-orange:visited {
   color: $orange;
   text-decoration: none;
+}
+
+.cursor{
+  cursor: pointer;
 }

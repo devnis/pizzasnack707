@@ -4,7 +4,9 @@ namespace AppBundle\Form\Type;
 
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -16,16 +18,16 @@ class ProduitsType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('name', TextType::class, ['label' => 'Nom'])
+        $builder->add('name', TextType::class)
             ->add('categorie', EntityType::class,
                 [
-                    'class' => 'Categorie.php',
+                    'class' => 'AppBundle\Entity\Categorie',
                     'choice_label' => 'type'
                 ]
             )
-            ->add('ingredients', TextType::class, ['label' => 'Ingredient'])
-            ->add('price', TextType::class, ['label' => 'Prix'])
-            ->add('submit', SubmitType::class, ['label' => 'Enregistrer le produit']);
+            ->add('ingredients', TextareaType::class)
+            ->add('price', IntegerType::class)
+            ->add('submit', SubmitType::class);
     }
 
     /**
