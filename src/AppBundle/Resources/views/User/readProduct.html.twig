@@ -56,7 +56,7 @@
                     <div class="col-12 col-md-6 col-lg-4 pt-2 pb-2 {{ produit.categorie.type }}">
                         <div class="row">
                             <div class="text-center col-12">
-                                <img src="{{ asset('img/produits/pizzaOignons.jpg') }}" alt="pizza" class="img-fluid o-img .o-trans">
+                                <img src="{{ asset('img/produits/' ~ produit.img) }}" alt="pizza" class="img-fluid o-img .o-trans">
                             </div>
                             <div class="col-7">
                                 <p class="f-molot">
@@ -188,8 +188,6 @@
     </section>
 
     {#TODO faire un bouton pour l'envoie de commande#}
-
-    </div>
 
 
 {% endblock %}
