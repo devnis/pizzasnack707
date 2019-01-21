@@ -17,7 +17,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class AProposController extends Controller
 {
     /**
-     * @Route("homepage/aPropos", name="a_propos")
+     * @Route("/aPropos", name="a_propos")
      */
     public function aProposAction(){
 

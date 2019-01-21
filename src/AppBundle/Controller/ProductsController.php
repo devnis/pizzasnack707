@@ -17,7 +17,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class ProductsController extends Controller
 {
     /**
-     * @Route("homepage/pizzas", name="read_pizzas")
+     * @Route("/carte", name="read_pizzas")
      */
     public function ReadProductAction()
     {
