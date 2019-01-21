@@ -20,7 +20,7 @@ class AdminProduitsController extends Controller
 {
     /**
      * Méthode pour afficher tous les produits
-     * @Route("/admin", name="admin_produit")
+     * @Route("/admin/", name="admin_produit")
      */
     public function PizzaAction()
     {
