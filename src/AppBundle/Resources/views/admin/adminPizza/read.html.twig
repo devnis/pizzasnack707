@@ -26,11 +26,11 @@
     {% for produit in produits %}
         <tr class="bg-light">
             <td>
-                {#<a href="{{ path('page_auteur', {'id':auteur.id}) }}">#}
-                <p>
+                <div class="align-self-center">
+                    <div>
                     {{ produit.name }}
-                </p>
-                {#</a>#}
+                    </div>
+                </div>
             </td>
             <td class="text-center">
                 {{ produit.categorie.type }}
@@ -42,11 +42,9 @@
                 {{ produit.price }}
             </td>
             <td class="text-center">
-                {#<a href="{{ path('livre', {'id':livre.id}) }}">#}
-                <button type="button" class="btn btn-success">
-                    Voir
-                </button>
-                {#</a>#}
+                <div class="img-admin">
+                    <img src="{{ asset('img/produits/' ~ produit.img) }}" alt="photo du produit" class="img-fluid img-contain">
+                </div>
             </td>
             <td class="text-center">
                 <a href="{{ path('admin_produit_update', {'id':produit.id}) }}">

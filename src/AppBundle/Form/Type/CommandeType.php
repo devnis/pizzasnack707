@@ -25,7 +25,7 @@ class CommandeType extends AbstractType
     {
         $builder->add('pizza', EntityType::class,
                 [
-                    'class' => 'Produits.php',
+                    'class' => 'produits.php',
                     'choice_label' => 'name'
                 ]
             )

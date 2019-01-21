@@ -3,185 +3,191 @@
 
 {% block content %}
 
-    <div class="container-fluid">
-        <div class="row">
-            {#Aside nav #}
-            <div class="col-lg-2 c-orange p-1 aside--sticky aside--hg d-none d-lg-block">
-                <h3>
-                    Notre carte
-                </h3>
-                <ul class="ul-style pt-3 pb-3">
-                    <li class="pt-3 pb-3">
-                        <div id="pizza" class="cursor">
-                            LES PIZZAS
-                        </div>
-                        <ul class="ul-style">
-                            <li class="cursor" id="tomate">
-                                Base tomate
-                            </li>
-                            <li class="cursor" id="creme">
-                                Base crème
-                            </li>
-                        </ul>
-                    <li class="pt-3 pb-3">
-                        <div id="snack" class="cursor">
-                            SNACK
-                        </div>
-                        <ul class="ul-style">
-                            <li class="cursor" id="bigBunn">
-                                Big Bunn's
-                            </li>
-                            <li class="cursor" id="snack1">
-                                Snack
-                            </li>
-                            <li class="cursor" id="panini">
-                                Panini
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
+    {# side bar #}
+    <aside>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-2 c-orange p-1 aside--sticky aside--hg d-none d-lg-block">
+                    <h3>
+                        Notre carte
+                    </h3>
+                    <ul class="ul-style pt-3 pb-3">
+                        <li class="pt-3 pb-3">
+                            <div id="pizza" class="cursor">
+                                LES PIZZAS
+                            </div>
+                            <ul class="ul-style">
+                                <li class="cursor" id="tomate">
+                                    Base tomate
+                                </li>
+                                <li class="cursor" id="creme">
+                                    Base crème
+                                </li>
+                            </ul>
+                        <li class="pt-3 pb-3">
+                            <div id="snack" class="cursor">
+                                SNACK
+                            </div>
+                            <ul class="ul-style">
+                                <li class="cursor" id="bigBunn">
+                                    Big Bunn's
+                                </li>
+                                <li class="cursor" id="snack1">
+                                    Snack
+                                </li>
+                                <li class="cursor" id="panini">
+                                    Panini
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
             </div>
+        </div>
+    </aside>
 
-            <div class="offset-lg-2 col-lg-8 col-12 col-md-9 bg-white">
-                <div class="row">
+    {# produits #}
+    <section>
+        <div class="offset-lg-2 col-lg-8 col-12 col-md-9 bg-white">
+            <div class="row">
 
-                    {#todo mettre en forme les éléments#}
-
-                    {% for produit in produits %}
-
-                        <div class="col-12 col-md-6 col-lg-4 pt-2 pb-2 {{ produit.categorie.type }}">
-                            <div class="row">
-                                <div class="text-center col-12">
-                                    <img src="{{ asset('img/pizzaOignons.jpg') }}" alt="pizza" class="img-fluid">
-                                </div>
-                                <div class="col-7">
-                                    <p class="f-molot">
-                                        {{ produit.name }}
-                                    </p>
-                                </div>
-                                <div class="col-5 text-right">
-                                    <p class="f-s-roboto">
-                                        {{ produit.price ~ ' €' }}
-                                    </p>
-                                </div>
-                                <div class="pt-1 pb-1 col-12 h-ing">
-                                    <p>
-                                        {{ produit.ingredients }}
-                                    </p>
-                                </div>
-                                <div class="offset-1 col-10 text-center">
-                                    {#<a class="btn btn-block c-orange" href="{{ path('panier_ajouter', {'id' : produit.id}) }}">Ajouter au panier</a>#}
-                                    <input class="btn btn-lg btn-block b-orange" type="submit" id="_submit" name="_submit" value="Ajouter au panier">
-                                </div>
+                {# affichage de tous les produits #}
+                {% for produit in produits %}
+                    <div class="col-12 col-md-6 col-lg-4 pt-2 pb-2 {{ produit.categorie.type }}">
+                        <div class="row">
+                            <div class="text-center col-12">
+                                <img src="{{ asset('img/produits/pizzaOignons.jpg') }}" alt="pizza" class="img-fluid o-img .o-trans">
+                            </div>
+                            <div class="col-7">
+                                <p class="f-molot">
+                                    {{ produit.name }}
+                                </p>
+                            </div>
+                            <div class="col-5 text-right">
+                                <p class="f-s-roboto">
+                                    {{ produit.price ~ ' €' }}
+                                </p>
+                            </div>
+                            <div class="pt-1 pb-1 col-12 h-ing">
+                                <p>
+                                    {{ produit.ingredients }}
+                                </p>
+                            </div>
+                            <div class="offset-1 col-10 text-center">
+                                <input class="btn btn-lg btn-block b-orange" type="submit" id="_submit" name="_submit" value="Ajouter au panier">
                             </div>
                         </div>
+                    </div>
+                {% endfor %}
 
-                    {% endfor %}
+            </div>
+        </div>
+    </section>
 
+    {# Panier #}
+    <section>
+        <div class="offset-md-9 col-md-3 offset-lg-10 col-lg-2 c-orange aside--sticky aside--hg d-none d-md-block">
+
+            {#{% for article in %}#}
+            <div class="col-12 cart--br pt-2 pb-2">
+                <div class="row">
+                    <div class="col-7">
+                        <h6 class="f-molot f-molot-small">
+                            {{ produits.7.name }}
+                        </h6>
+                    </div>
+                    <div class="col-5">
+                        <form action="" method="get">
+                            <div class="form-group">
+                                <select class="form-control" id="exampleFormControlSelect1">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                    <option>6</option>
+                                    <option>7</option>
+                                    <option>8</option>
+                                    <option>9</option>
+                                    <option>10</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-7">
+                        {{ produits.7.price ~ ' €' }}
+                    </div>
+                    <div class="col-5 justify-content-center">
+                        <a href="" class="c-orange">
+                            <div class="row">
+                                <i class="fas fa-trash-alt pt-1"></i>
+                                <p class="pl-1 mb-0">
+                                    Retirer
+                                </p>
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
-            <div class="offset-md-9 col-md-3 offset-lg-10 col-lg-2 c-orange aside--sticky aside--hg d-none d-md-block">
-
-                {#{% for article in %}#}
-                <div class="col-12 cart--br pt-2 pb-2">
-                    <div class="row">
-                        <div class="col-7">
-                            <h6 class="f-molot f-molot-small">
-                                {{ produits.7.name }}
-                            </h6>
-                        </div>
-                        <div class="col-5">
-                            <form action="" method="get">
-                                <div class="form-group">
-                                    <select class="form-control" id="exampleFormControlSelect1">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                        <option>6</option>
-                                        <option>7</option>
-                                        <option>8</option>
-                                        <option>9</option>
-                                        <option>10</option>
-                                    </select>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="col-7">
-                            {{ produits.7.price ~ ' €' }}
-                        </div>
-                        <div class="col-5 justify-content-center">
-                            <a href="" class="c-orange">
-                                <div class="row">
-                                    <i class="fas fa-trash-alt pt-1"></i>
-                                    <p class="pl-1 mb-0">
-                                        Retirer
-                                    </p>
-                                </div>
-                            </a>
-                        </div>
+            <div class="col-12 cart--br pt-2 pb-2">
+                <div class="row">
+                    <div class="col-7">
+                        <p class="f-molot f-molot-small">
+                            {{ produits.2.name }}
+                        </p>
+                    </div>
+                    <div class="col-5">
+                        <form action="">
+                            <div class="form-group">
+                                <select class="form-control" id="exampleFormControlSelect1">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                    <option>6</option>
+                                    <option>7</option>
+                                    <option>8</option>
+                                    <option>9</option>
+                                    <option>10</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-7">
+                        {{ produits.2.price ~ ' €' }}
+                    </div>
+                    <div class="col-5 justify-content-center">
+                        <a href="" class="c-orange">
+                            <div class="row">
+                                <i class="fas fa-trash-alt pt-1"></i>
+                                <p class="pl-1 mb-0">
+                                    Retirer
+                                </p>
+                            </div>
+                        </a>
                     </div>
                 </div>
-                <div class="col-12 cart--br pt-2 pb-2">
-                    <div class="row">
-                        <div class="col-7">
-                            <p class="f-molot f-molot-small">
-                                {{ produits.2.name }}
-                            </p>
-                        </div>
-                        <div class="col-5">
-                            <form action="">
-                                <div class="form-group">
-                                    <select class="form-control" id="exampleFormControlSelect1">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                        <option>6</option>
-                                        <option>7</option>
-                                        <option>8</option>
-                                        <option>9</option>
-                                        <option>10</option>
-                                    </select>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="col-7">
-                            {{ produits.2.price ~ ' €' }}
-                        </div>
-                        <div class="col-5 justify-content-center">
-                            <a href="" class="c-orange">
-                                <div class="row">
-                                    <i class="fas fa-trash-alt pt-1"></i>
-                                    <p class="pl-1 mb-0">
-                                        Retirer
-                                    </p>
-                                </div>
-                            </a>
-                        </div>
+            </div>
+
+            {#{% endfor %}#}
+
+            <div class="col-12 bg-white pt-2 pb-2 ">
+                <div class="row align-self-center">
+                    <div class="col-6">
+                        <p class="m-0">
+                            Total :
+                        </p>
                     </div>
-                </div>
-
-                {#{% endfor %}#}
-
-                <div class="col-12 bg-white pt-2 pb-2 ">
-                    <div class="row align-self-center">
-                        <div class="col-6">
-                            <p class="m-0">
-                                Total :
-                            </p>
-                        </div>
-                        <div class="col-6 text-right">
-                            {{ produits.1.price ~ ' €' }}
-                        </div>
+                    <div class="col-6 text-right">
+                        {{ produits.1.price ~ ' €' }}
                     </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        {#TODO faire un bouton pour l'envoie de commande#}
+    {#TODO faire un bouton pour l'envoie de commande#}
 
     </div>
 

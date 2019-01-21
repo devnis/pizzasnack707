@@ -3,11 +3,12 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * pizza
  *
- * @ORM\Table(name="Produits")
+ * @ORM\Table(name="produits")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\ProduitsRepository")
  */
 class Produits
@@ -38,7 +39,8 @@ class Produits
     /**
      * @var string
      *
-     * @ORM\Column(name="img", type="string", length=20, nullable=true)
+     * @ORM\Column(name="img", type="string", length=50, nullable=true)
+     * @Assert\File(mimeTypes={"image/jpeg"})
      */
     private $img;
 

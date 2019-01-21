@@ -1,4 +1,6 @@
 // Menu carte
+
+// selection des pizzas bases tomates
 $(function () {
     $("#tomate").click(function () {
         $(".creme").hide();
@@ -10,6 +12,7 @@ $(function () {
     });
 });
 
+// selection des pizzas base creme
 $(function () {
     $("#creme").click(function () {
         $(".tomate").hide();
@@ -21,6 +24,7 @@ $(function () {
     });
 });
 
+// selection des big bunn's
 $(function () {
     $("#bigBunn").click(function () {
         $(".tomate").hide();
@@ -32,6 +36,7 @@ $(function () {
     });
 });
 
+// selection des snacks
 $(function () {
     $("#snack1").click(function () {
         $(".tomate").hide();
@@ -43,6 +48,7 @@ $(function () {
     });
 });
 
+// selection des panini
 $(function () {
     $("#panini").click(function () {
         $(".tomate").hide();
