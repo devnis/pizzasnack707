@@ -41,12 +41,17 @@ class Produits
      *
      * @ORM\Column(name="img", type="string", length=50, nullable=true)
      * @Assert\File(mimeTypes={"image/jpeg"})
+     * @Assert\Image(
+     *     minWidth = 100,
+     *     maxWidth = 300,
+     *     minHeight = 100,
+     *     maxHeight = 200
+     * )
      */
     private $img;
 
     /**
      * @var string
-     *
      * @ORM\Column(name="ingredients", type="string", length=100)
      */
     private $ingredients;

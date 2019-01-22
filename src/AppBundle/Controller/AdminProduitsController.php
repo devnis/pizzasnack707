@@ -60,21 +60,24 @@ class AdminProduitsController extends Controller
             $this->addFlash("notice", "Le produit est bien enregistré");
             // récupere les données dans une entité à partir des données envoyées
             $produit = $form->getData();
+
+            //recupere l'image
             $image = $produit->getImg();
-
+            // change le nom de l'image
             $imageName = md5(uniqid()).'.'.$image->guessExtension();
-
-            // Move the file to the directory where brochures are stored
+            // Sauvegarde le fichier dans le dossier spécifié
             try {
                 $image->move(
                     $this->getParameter('img_directory'),
                     $imageName
                 );
             } catch (FileException $e) {
+                // si le l'image n'est pas sauvegardé dans le dossier
                 echo $e->getMessage() . "L'image n'est pas enregistrée";
             }
-
+            // prepare l'envoie du nom du fichier dans la BDD
             $produit->setImg($imageName);
+
             // appelle la methode getManager pour envoyer les données dans la BDD
             $entityManager = $this->getDoctrine()->getManager();
             // stock les données avant d'etre envoyées
@@ -115,21 +118,22 @@ class AdminProduitsController extends Controller
 
             // récupere les données dans une entité à partir des données envoyées
             $produit = $form->getData();
-
+            //recupere l'image
             $image = $produit->getImg();
-
+            // change le nom de l'image
             $imageName = md5(uniqid()).'.'.$image->guessExtension();
 
-            // Move the file to the directory where brochures are stored
+            // Sauvegarde le fichier dans le dossier spécifié
             try {
                 $image->move(
                     $this->getParameter('img_directory'),
                     $imageName
                 );
             } catch (FileException $e) {
+                // si le l'image n'est pas sauvegardé dans le dossier
                 echo $e->getMessage() . "L'image n'est pas enregistrée";
             }
-
+            // prepare l'envoie du nom du fichier dans la BDD
             $produit->setImg($imageName);
 
             // appelle la methode getManager pour envoyer les données dans la BDD
